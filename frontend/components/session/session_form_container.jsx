@@ -16,9 +16,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   let action;
   if (ownProps.match.path === "/login") {
-    action = user => dispatch(login(user));
+    action = (user) => dispatch(login(user));
   }else {
-    action = use => dispatch(signup(user));
+    action = (user) => dispatch(signup(user));
   }
   return {
     action

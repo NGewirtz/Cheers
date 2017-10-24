@@ -5,8 +5,13 @@ import SplashPage from './splash_page';
 import SessionFormContainer from './session/session_form_container';
 
 
+const Profile = () => (
+  <h1>This IS a profile</h1>
+);
+
 const App = () => (
   <div>
+    <ProtectedRoute path="/users" component={Profile} />
     <AuthRoute path="/" component={SplashPage} />
   </div>
 );

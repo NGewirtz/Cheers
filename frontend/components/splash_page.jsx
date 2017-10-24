@@ -13,10 +13,8 @@ const SplashPage = () => {
       <section>
         <h1>CHEERS!</h1>
         <h2>Join us at the bar</h2>
-        <Switch>
-          <AuthRoute path="/login" component={SessionFormContainer} />
-          <AuthRoute path="/signup" component={SessionFormContainer} />
-        </Switch>
+        <Route path="/login" component={SessionFormContainer} />
+        <Route path="/signup" component={SessionFormContainer} />
       </section>
     </div>
   );
