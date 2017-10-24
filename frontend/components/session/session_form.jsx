@@ -13,8 +13,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action({ 'user': this.state })
-    .then(this.props.history.push(`/users/${this.state.username}`));
+    this.props.action({ 'user': this.state });
   }
 
   handleChange(key) {
