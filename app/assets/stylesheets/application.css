@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+ html, body, section, article,
+ h1, h2, p, strong, em, a {
+   margin: 0;
+   border: 0;
+   padding: 0;
+   outline: 0;
+   box-sizing: inherit;
+   font: inherit;
+   text-decoration: inherit;
+   text-align: inherit;
+   color: inherit;
+   background: transparent;
+ }
+
+ .splash {
+   background-image: url('./splash.jpg');
+   height: 700px;
+   background-repeat: no-repeat;
+   background-size: cover;
+   margin: 20px;
+ }
+
+ .splash a {
+   text-decoration: none;
+   color: white;
+ }
+
+ .splash button {
+   font-size: 18px;
+   padding: 10px;
+   margin: 20px;
+   background-color: black;
+   color: white;
+   border: solid 3px white;
+   border-radius: 5px;
+ }
+
+ .splash button:hover {
+   background-color: #ffcc00;
+   transition: 1s;
+ }
+
+ .splash header {
+   display: flex;
+   justify-content: flex-end;
+   margin: 20px;
+ }
