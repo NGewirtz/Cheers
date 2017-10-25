@@ -41,7 +41,6 @@ ul {
   height: 700px;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 20px;
 }
 
 .splash a {
@@ -68,6 +67,8 @@ ul {
   display: flex;
   justify-content: flex-end;
   margin: 20px;
+  margin-top: 0;
+  padding-top: 20px;
 }
 
 .splash section {
