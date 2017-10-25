@@ -3,16 +3,12 @@ import { Route, Redirect, Link,  HashRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashPage from './splash_page';
 import SessionFormContainer from './session/session_form_container';
-
-
-const Profile = () => (
-  <h1>This IS a profile</h1>
-);
+import Profile from './profile/profile'
 
 const App = () => (
   <div>
-    <ProtectedRoute path="/users" component={Profile} />
     <AuthRoute path="/" component={SplashPage} />
+    <ProtectedRoute path="/users" component={Profile} />
   </div>
 );
 
