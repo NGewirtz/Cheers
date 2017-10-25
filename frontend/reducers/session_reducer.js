@@ -9,7 +9,8 @@ const SessionReducer = (state = defaultUser, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      return Object.assign({}, { currentUser: action.currentUser.username, userImg: action.currentUser.img_url });
+      return Object.assign({}, { currentUser: action.currentUser.username,
+        userImg: action.currentUser.img_url });
     default:
       return state;
   }

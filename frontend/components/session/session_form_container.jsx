@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     formType = "login";
   }
   return {
-    formType
+    formType,
+    errors: state.errors
   };
 };
 

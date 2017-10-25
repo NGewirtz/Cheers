@@ -9,11 +9,15 @@ const Test = () => <h1>TEST</h1>;
 document.addEventListener("DOMContentLoaded", () => {
   let store;
   if (window.currentUser) {
-   const preloadedState = { session: { currentUser: window.currentUser } };
-   store = configureStore(preloadedState);
-   delete window.currentUser;
-  } else {
-   store = configureStore();
+    const preloadedState = { session: {
+      currentUser: window.currentUser.username,
+      userImg: window.currentUser.img_url
+    }
+  };
+  store = configureStore(preloadedState);
+  delete window.currentUser;
+  }else {
+    store = configureStore();
   }
   window.logout = logout;
   window.store = store;

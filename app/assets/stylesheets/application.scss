@@ -27,158 +27,167 @@
    background: transparent;
  }
 
- ul {
-   list-style: none;
+ul {
+  list-style: none;
+}
+
+.errors {
+  color: white;
+  font-size: 18px;
  }
 
- .splash {
-   background: image-url('splash2.jpg');
-   height: 700px;
-   background-repeat: no-repeat;
-   background-size: cover;
-   margin: 20px;
- }
+.splash {
+  background: image-url('splash2.jpg');
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 20px;
+}
 
- .splash a {
-   text-decoration: none;
-   color: white;
- }
+.splash a {
+  text-decoration: none;
+  color: white;
+}
 
- .splash button {
-   font-size: 18px;
-   padding: 10px;
-   margin: 20px;
-   background-color: transparent;
-   color: white;
-   border: solid 3px white;
-   border-radius: 5px;
- }
+.splash button {
+  font-size: 18px;
+  padding: 10px;
+  margin: 20px;
+  background-color: transparent;
+  color: white;
+  border: solid 3px white;
+  border-radius: 5px;
+}
 
- .splash button:hover {
-   background-color: #ffcc00;
-   transition: 1s;
- }
+.splash button:hover {
+  background-color: #ffcc00;
+  transition: 1s;
+}
 
- .splash header {
-   display: flex;
-   justify-content: flex-end;
-   margin: 20px;
- }
+.splash header {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+}
 
- .splash section {
-   display: flex;
-   text-align: center;
- }
+.splash section {
+  display: flex;
+  text-align: center;
+}
 
- .home-logo {
-   font-family: 'Anton', sans-serif;
-   font-size: 128px;
-   color: white;
-   text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
- }
+.home-logo {
+ font-family: 'Anton', sans-serif;
+ font-size: 128px;
+ color: white;
+ text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+}
 
- .home-logo + h2, .header-logo {
+.home-logo + h2, .header-logo {
   color: white;
   font-size: 36px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
- }
+}
 
- .header-logo {
+.header-logo {
   font-family: 'Anton', sans-serif;
- }
+}
 
- .splash section {
-   display: flex;
-   flex-direction: column;
- }
+.splash section {
+  display: flex;
+  flex-direction: column;
+}
 
- .user-form {
-   display: flex;
-   flex-direction: column;
-   width: 33%;
-   margin: 0 auto;
-   padding: 40px;
- }
+.user-form {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin: 0 auto;
+  padding: 40px;
+}
 
- .user-form input {
-   margin: 5px;
-   font-size: 20px;
-   border-radius: 5px;
-   padding: 5px;
- }
+.user-form input {
+ margin: 5px;
+ font-size: 20px;
+ border-radius: 5px;
+ padding: 5px;
+}
 
- input[type="submit"] {
-   background-color: #ffcc00;
-   color: white;
-   text-transform: capitalize;
-   margin-top: 25px;
-   font-size: 24px;
- }
+input[type="submit"] {
+ background-color: #ffcc00;
+ color: white;
+ text-transform: capitalize;
+ margin-top: 25px;
+ font-size: 24px;
+}
 
-  input[type="submit"]:hover {
-    background-color: #efb134;
-  }
+input[type="submit"]:hover {
+  background-color: #efb134;
+}
 
-  input:focus{
-    outline:none;
-    border: 3px solid #ffcc00;
-    border-radius: 5px;
-  }
+input:focus{
+  outline:none;
+  border: 3px solid #ffcc00;
+  border-radius: 5px;
+}
 
-  .main-header {
-    display: flex;
-    background-color: #ffcc00;
-    width: 100%;
-    height: 50px;
-    justify-content: space-between;
-  }
+.main-header {
+  display: flex;
+  background-color: #ffcc00;
+  width: 100%;
+  height: 50px;
+  justify-content: space-between;
+}
 
-  .main-header nav {
-    margin: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 50%
-  }
+.main-header nav {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%
+}
 
-  .header-link {
-    color: white;
-    font-size: 28px;
-  }
+.header-link {
+  color: white;
+  font-size: 28px;
+}
 
-  .user-header {
-    margin-right: 10%;
-    display: flex;
-    align-items: center;
-  }
+.user-header {
+  margin-right: 10%;
+  display: flex;
+  align-items: center;
+}
 
-  .user-header > li {
-    position: relative;
-  }
+.user-header > li {
+  position: relative;
+}
 
-  li:hover .user-options {
-    display: block;
-  }
+li:hover .user-options {
+  display: block;
+}
 
-  .user-options {
-    display: none;
-    position: absolute;
-    background: #363638;
-    border: 1px solid white;
-  }
+.user-options {
+  display: none;
+  position: absolute;
+  background: #363638;
+  border: 1px solid white;
+}
 
-  .user-options li {
-    color: white;
-    height: 30px;
-    padding: 5px;
-    display: inline-block;
-    width: 100px;
-    border: 1px solid white;
-    cursor: pointer;
-    font-size: 18px;
-  }
+.user-options li {
+  color: white;
+  height: 30px;
+  padding: 5px;
+  display: inline-block;
+  width: 100px;
+  border: 1px solid white;
+  cursor: pointer;
+  font-size: 18px;
+}
 
-  .user-header-img {
-    height: 30px;
-    border-radius: 25px;
-  }
+.user-options li:hover {
+  background-color: black;
+}
+
+.user-header-img {
+  height: 30px;
+  border-radius: 25px;
+}

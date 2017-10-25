@@ -22,14 +22,29 @@ class SessionForm extends React.Component {
     };
   }
 
+  componentWillReceiveProps(newProps) {
+    debugger
+    if (newProps.location.pathname !== this.props.location.pathname) {
+      console.log('moving')
+    }
+  }
+
   render() {
+    let errors = this.props.errors.map(error => (
+      <li className='errors'>{error}</li>
+    ));
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="user-form">
-          <input type='text'value={this.state.username} onChange={this.handleChange('username')} />
-          <input type='password' value={this.state.password} onChange={this.handleChange('password')} />
+          <input type='text'value={this.state.username}
+            onChange={this.handleChange('username')} />
+          <input type='password' value={this.state.password}
+            onChange={this.handleChange('password')} />
           <input type="submit" value={this.props.formType}/>
         </form>
+        <ul>
+          {errors}
+        </ul>
       </div>
     );
   }
