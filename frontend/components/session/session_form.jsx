@@ -22,11 +22,8 @@ class SessionForm extends React.Component {
     };
   }
 
-  componentWillReceiveProps(newProps) {
-    debugger
-    if (newProps.location.pathname !== this.props.location.pathname) {
-      console.log('moving')
-    }
+  componentDidMount() {
+    this.props.clearErrors();
   }
 
   render() {
