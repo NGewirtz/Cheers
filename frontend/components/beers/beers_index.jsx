@@ -19,7 +19,8 @@ class BeerIndex extends React.Component {
       <div className="wrapper">
         <Header />
         <section className="beers-top">
-          <button className="add-button" title="Add A Beer">+</button>
+          <Link to='/beers/new'><button className="add-button"
+            title="Add A Beer">+</button></Link>
           <h1>Top Rated Beers</h1>
         </section>
         <main>

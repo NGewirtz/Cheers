@@ -38,6 +38,10 @@ ul {
   list-style: none;
 }
 
+textarea {
+  height: 100px;
+}
+
 header + h1, .beers-top h1 {
   font-size: 38px;
   margin: 0 auto;
@@ -137,7 +141,7 @@ hr {
   flex-direction: column;
 }
 
-.user-form {
+form {
   display: flex;
   flex-direction: column;
   width: 33%;
@@ -145,14 +149,15 @@ hr {
   padding: 40px;
 }
 
-.user-form input {
+input, .add-image, textarea {
  margin: 5px;
  font-size: 20px;
  border-radius: 5px;
  padding: 5px;
+ border: 3px solid transparent;
 }
 
-input[type="submit"] {
+input[type="submit"], .add-image {
  background-color: #ffcc00;
  color: white;
  text-transform: capitalize;
@@ -160,11 +165,11 @@ input[type="submit"] {
  font-size: 24px;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, .add-image:hover {
   background-color: #efb134;
 }
 
-input:focus{
+input:focus, textarea:focus {
   outline:none;
   border: 3px solid #ffcc00;
   border-radius: 5px;
@@ -327,4 +332,30 @@ aside h2 {
 
 .sidebar-item h3 {
   margin-top: 10px;
+}
+
+.beer-form {
+  background-color: white;
+  width: 40%;
+  height: 600px;
+  margin-top: 30px;
+}
+
+.beer-form img {
+  width: 20%;
+}
+
+.beer-form-top {
+  display: flex;
+  width: 80%;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.beer-form > div {
+  display: flex;
+}
+
+.beer-form input {
+
 }

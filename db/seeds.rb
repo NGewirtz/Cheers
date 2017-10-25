@@ -6,11 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+User.destroy_all
+User.create(username: 'user', password: '123456')
+User.create(username: 'user2', password: 'starwars')
+
 Brewery.destroy_all
 brew1 = Brewery.create!(name: 'ipa brewery', location: 'NYC', description: "We brew delicious ipas")
 brew2 = Brewery.create!(name: 'ipa brewery2', location: 'LA', description: "We also brew delicious ipas")
-
-
 
 Beer.destroy_all
 Beer.create!(brewery_id: brew1.id, name: "IPA", beer_type: "IPA", description: "When a pit viper meditates, a Christmas Ale about a Sierra Nevada Pale Ale returns home. Indeed, the hops negotiates a prenuptial agreement with a financial Pilsner. If the lager teaches a lager, then a Budweiser meditate")
