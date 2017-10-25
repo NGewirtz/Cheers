@@ -81,7 +81,8 @@ hr {
 
 .splash {
   background: image-url('splash2.jpg');
-  height: 700px;
+  height: 100vh;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
