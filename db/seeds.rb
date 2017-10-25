@@ -6,8 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Brewery.destroy_all
+brew1 = Brewery.create!(name: 'ipa brewery', location: 'NYC', description: "We brew delicious ipas")
+brew2 = Brewery.create!(name: 'ipa brewery2', location: 'LA', description: "We also brew delicious ipas")
+
+
+
 Beer.destroy_all
-Beer.create!(brewery_id: 1, name: "IPA", beer_type: "IPA", description: "delicious IPA")
-Beer.create!(brewery_id: 1, name: "IPA2", beer_type: "IPA", description: "delicious IPA")
-Beer.create!(brewery_id: 1, name: "IPA3", beer_type: "IPA", description: "delicious IPA")
-Beer.create!(brewery_id: 1, name: "IPA4", beer_type: "IPA", description: "delicious IPA")
+Beer.create!(brewery_id: brew1.id, name: "IPA", beer_type: "IPA", description: "delicious IPA")
+Beer.create!(brewery_id: brew1.id, name: "IPA2", beer_type: "IPA", description: "delicious IPA")
+Beer.create!(brewery_id: brew2.id, name: "IPA3", beer_type: "IPA", description: "delicious IPA")
+Beer.create!(brewery_id: brew2.id, name: "IPA4", beer_type: "IPA", description: "delicious IPA")
