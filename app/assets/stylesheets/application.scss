@@ -468,3 +468,44 @@ input[type="range"] {
 .checkin-form textarea {
   margin-top: 20px;
 }
+
+
+// -----https://codepen.io/Bluetidepro/pen/GkpEa A PEN BY Zach Reed---
+//Copyright (c) 2017 by Zach Reed (https://codepen.io/Bluetidepro/pen/GkpEa)
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 25px;
+  height: 25px;
+  width: 100% !important;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
+
+  &-top {
+    color: #ffcc00;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  &-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+}
+
+#star-li {
+  padding: 0;
+  border-right: 0;
+}
+
+#star-li-label {
+  padding-left: 0;
+}
+//---------------------------------------------------------------------

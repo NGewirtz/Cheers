@@ -1,6 +1,7 @@
 class Checkin < ApplicationRecord
   validates :body, :rating, presence: true
   validates :rating, inclusion: 0..5
+  validates :user, uniqueness: { scope:  :beer }
   belongs_to :user
   belongs_to :beer
 
