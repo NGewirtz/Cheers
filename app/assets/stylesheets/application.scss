@@ -245,7 +245,7 @@ li:hover .user-options {
   border-radius: 25px;
 }
 
-.beers-index-ul, .beer-show-item {
+.beers-index-ul, .beer-show-item, .checkin-index-ul {
   width: 55%;
   margin: 20px;
   background-color: white;
@@ -395,6 +395,7 @@ aside h2 {
 .beer-show-item {
   height: 35%;
   margin: 20px;
+  margin-left: 5%;
 }
 
 .beer-show-item nav {

@@ -7,6 +7,7 @@ import Profile from './profile/profile';
 import BeerIndex from './beers/beers_index_container';
 import BeerForm from './beers/beer_form_container.jsx';
 import BeerShow from './beers/beer_show_container.jsx';
+import Bar from './checkin/checkin_index_container.jsx';
 
 const App = () => (
   <div>
@@ -16,6 +17,7 @@ const App = () => (
       <ProtectedRoute path="/beers/:beerId/edit" component={BeerForm} />
       <ProtectedRoute path="/beers/:beerId" component={BeerShow} />
       <ProtectedRoute exact path="/beers" component={BeerIndex} />
+      <ProtectedRoute exact path="/bar" component={Bar} />
       <AuthRoute path="/" component={SplashPage} />
     </Switch>
   </div>
