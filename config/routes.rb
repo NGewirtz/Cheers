@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy, :show]
+    get '/beers/sidebar', to: 'beers#sidebar' 
     resources :beers, only: [:index, :show, :create, :update]
     resources :breweries, only: [:index, :show]
   end

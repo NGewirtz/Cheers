@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import BeerForm from './beer_form.jsx';
 import { fetchBeer, createBeer, updateBeer, fetchBreweries } from '../../actions/beer_actions';
+import { clearErrors } from '../../actions/session_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
   }
   return {
     beer,
-    breweries: Object.values(state.entities.breweries)
+    breweries: Object.values(state.entities.breweries),
+    errors: state.errors
   };
 };
 
@@ -24,6 +26,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     action = beer => dispatch(updateBeer(beer));
   }
   return {
+    clearErrors: () => dispatch(clearErrors()),
     fetchBreweries: () => dispatch(fetchBreweries()),
     fetchBeer: id => dispatch(fetchBeer(id)),
     action

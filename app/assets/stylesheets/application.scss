@@ -27,7 +27,7 @@
    background: transparent;
  }
 
- h3, h4 {
+ h3, h4, h5 {
    margin: 0;
    border: 0;
    padding: 0;
@@ -245,7 +245,7 @@ li:hover .user-options {
   border-radius: 25px;
 }
 
-.beers-index-ul {
+.beers-index-ul, .beer-show-item {
   width: 55%;
   margin: 20px;
   background-color: white;
@@ -274,7 +274,12 @@ li:hover .user-options {
 }
 
 .beer-index-item-text h3 {
-  margin: 0;
+  color: #efb134;
+  font-size: 22px;
+}
+
+.beer-index-item-text h3:hover, .sidebar-item h3:hover {
+  color: #ffcc00;
 }
 
 .beer-index-item ul {
@@ -340,6 +345,8 @@ aside h2 {
 
 .sidebar-item h3 {
   margin-top: 10px;
+  color: #efb134;
+  font-size: 20px;
 }
 
 .beer-form {
@@ -372,4 +379,34 @@ aside h2 {
 
 .beer-form textarea {
   margin-bottom: 80px;
+}
+
+.beer-form-errors {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.beer-form-errors li {
+  color: black;
+  font-size: 18px;
+}
+
+.beer-show-item {
+  height: 35%;
+  margin: 20px;
+}
+
+.beer-show-item nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.beer-show-item nav button {
+  margin-left: 15px;
+}
+
+.beer-show-item h3 {
+  font-size: 36px;
 }

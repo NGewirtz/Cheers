@@ -1,7 +1,15 @@
-export const fetchBeers = () => {
+export const fetchBeers = (filter) => {
   return $.ajax({
     method: 'get',
-    url: '/api/beers'
+    url: `/api/beers`,
+    data: filter
+  });
+};
+
+export const fetchSidebarBeers = () => {
+  return $.ajax({
+    method: 'get',
+    url: `/api/beers/sidebar`,
   });
 };
 

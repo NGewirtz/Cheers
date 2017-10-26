@@ -11,7 +11,8 @@ class BeerForm extends React.Component {
   }
 
   componentDidMount() {
-    if ((this.props.location.pathname !== "/beers/new" ) && (!this.props.beer)){
+    this.props.clearErrors();
+    if ((this.props.location.pathname !== "/beers/new" )){
       this.props.fetchBeer(this.props.match.params.beerId);
     }else if($.isEmptyObject(this.props.breweries)) {
       this.props.fetchBreweries();
@@ -34,7 +35,7 @@ class BeerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
+    this.props.action(this.state).then(() => this.props.history.push('/beers'));
   }
 
   render() {
@@ -44,9 +45,15 @@ class BeerForm extends React.Component {
       const breweries = this.props.breweries.map(brewery => (
         <option key={brewery.id} value={brewery.id}>{brewery.name}</option>
       ));
+      const errors = this.props.errors.map(error => (
+        <li>{error}</li>
+      ));
       return (
         <div className="wrapper">
           <Header />
+          <ul className='beer-form-errors'>
+            {errors}
+          </ul>
           <form className="beer-form" onSubmit={this.handleSubmit}>
             <div>
               <img />

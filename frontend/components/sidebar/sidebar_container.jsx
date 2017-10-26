@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import { fetchBeers } from '../../actions/beer_actions';
+import { fetchSidebarBeers } from '../../actions/beer_actions';
 import Sidebar from './sidebar.jsx';
 import { beersSelector } from '../../util/selectors';
 
 const mapStateToProps = (state) => {
   return {
-    beers: beersSelector(state.entities.beers)
+    beers: state.sidebarItems
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchBeers: () => dispatch(fetchBeers())
+    fetchSidebarBeers: (filter) => dispatch(fetchSidebarBeers(filter))
   };
 };
 

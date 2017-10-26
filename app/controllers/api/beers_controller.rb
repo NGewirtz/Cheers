@@ -28,6 +28,13 @@ class Api::BeersController < ApplicationController
     end
   end
 
+  def sidebar
+    @beers = Beer.all.includes(:brewery).order(created_at: :desc).limit(10)
+    render 'api/beers/sidebar'
+  end
+
+
+
   private
 
   def beer_params
