@@ -14,6 +14,11 @@ class Api::CheckinsController < ApplicationController
     end
   end
 
+  def show
+    @checkin = Checkin.find(params[:id])
+    render 'api/checkins/show'
+  end
+
   private
 
   def checkin_params

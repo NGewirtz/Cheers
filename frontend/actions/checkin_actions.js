@@ -22,6 +22,10 @@ export const fetchCheckins = (filter) => dispatch => (
   APIUtil.fetchCheckins(filter).then(checkins => dispatch(receiveCheckins(checkins)))
 );
 
+export const fetchCheckin = id => dispatch => (
+  APIUtil.fetchCheckin(id).then(checkin => dispatch(receiveCheckin(checkin)))
+);
+
 export const createCheckin = checkin => dispatch => (
   APIUtil.createCheckin(checkin).then(checkin => dispatch(receiveCheckin(checkin)),
   errors => dispatch(receiveSessionErrors(errors)))

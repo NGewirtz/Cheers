@@ -349,7 +349,11 @@ aside h2 {
   font-size: 20px;
 }
 
-.beer-form, .checkin-form {
+.checkin-show-body {
+  margin: 0 auto;
+}
+
+.beer-form, .checkin-form, .checkin-show-body {
   background-color: white;
   width: 40%;
   height: 600px;
@@ -468,6 +472,8 @@ input[type="range"] {
 .checkin-form textarea {
   margin-top: 20px;
 }
+
+
 
 
 // -----https://codepen.io/Bluetidepro/pen/GkpEa A PEN BY Zach Reed---
