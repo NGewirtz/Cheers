@@ -27,3 +27,10 @@ export const updateBeer = beer => {
     data: { beer }
   });
 };
+
+export const fetchBreweries = () => {
+  return $.ajax({
+    method: 'get',
+    url: '/api/breweries'
+  });
+};

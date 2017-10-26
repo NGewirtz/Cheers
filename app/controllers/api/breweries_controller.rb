@@ -1,7 +1,7 @@
 class Api::BreweriesController < ApplicationController
 
   def index
-    @breweries = Brewery.all
+    @breweries = Brewery.select(:name, :id)
     render "api/breweries/index"
   end
 

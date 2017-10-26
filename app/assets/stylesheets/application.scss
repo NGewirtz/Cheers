@@ -150,12 +150,11 @@ form {
   padding: 40px;
 }
 
-input, .add-image, textarea {
+input, .add-image, textarea, select {
  margin: 5px;
  font-size: 20px;
  border-radius: 5px;
  padding: 5px;
- border: 3px solid transparent;
 }
 
 input[type="submit"], .add-image {
@@ -170,7 +169,15 @@ input[type="submit"]:hover, .add-image:hover {
   background-color: #efb134;
 }
 
-input:focus, textarea:focus {
+.user-form input, .add-image{
+  border: 3px solid transparent;
+}
+
+.beer-form input, .beer-form textarea, select {
+  border: 3px solid #f3f2ea;
+}
+
+input:focus, textarea:focus, select:focus {
   outline:none;
   border: 3px solid #ffcc00;
   border-radius: 5px;
@@ -357,6 +364,12 @@ aside h2 {
   display: flex;
 }
 
-.beer-form input {
+.one-third-form {
+  width: 33%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
+.beer-form textarea {
+  margin-bottom: 80px;
 }

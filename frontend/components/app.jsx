@@ -9,12 +9,12 @@ import BeerForm from './beers/beer_form_container.jsx';
 
 const App = () => (
   <div>
-    <AuthRoute path="/" component={SplashPage} />
     <Switch>
       <ProtectedRoute path="/users" component={Profile} />
       <ProtectedRoute exact path="/beers/new" component={BeerForm} />
       <ProtectedRoute path="/beers/:beerId/edit" component={BeerForm} />
       <ProtectedRoute exact path="/beers" component={BeerIndex} />
+      <AuthRoute path="/" component={SplashPage} />
     </Switch>
   </div>
 );

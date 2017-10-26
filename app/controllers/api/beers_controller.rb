@@ -19,10 +19,19 @@ class Api::BeersController < ApplicationController
     render "api/beers/show"
   end
 
+  def update
+    @beer = Beer.find(params[:id])
+    if @beer.update(beer_params)
+      render "api/beers/show"
+    else
+      render json: @beer.errors.full_messages, status: 422
+    end
+  end
+
   private
 
   def beer_params
-    params.require(:beer).permit(:name, :abv, :ibu, :beer_type, :description, :brewery_id)
+    params.require(:beer).permit(:name, :abv, :ibu, :beer_type, :description, :brewery_id, :id, :created_at)
   end
 
 end

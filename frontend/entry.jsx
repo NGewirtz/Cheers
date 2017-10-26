@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import { logout } from './actions/session_actions';
+import { fetchBeer } from './actions/beer_actions';
+
 
 const Test = () => <h1>TEST</h1>;
 
@@ -19,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }else {
     store = configureStore();
   }
+  window.fetchBeer = fetchBeer;
   window.logout = logout;
   window.store = store;
   const root = document.getElementById('root');
