@@ -16,7 +16,7 @@ export const fetchCheckin = id => {
 export const createCheckin = checkin => {
   return $.ajax({
     method: 'post',
-    url: '/api/checkins',
+    url: `/api/beers/${checkin.beerId}/checkins`,
     data: { checkin }
   });
 };

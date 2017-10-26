@@ -1,11 +1,11 @@
 class Api::CheckinsController < ApplicationController
 
   def index
-    @checkins = Checkin.all
+    @checkins = Checkin.all.includes(:user, :beer, :brewery)
   end
 
   def create
-    @checkin = current_user.checkin.new(checkin_params)
+    @checkin = current_user.checkins.new(checkin_params)
     @checkin.beer = Beer.find(params[:beer_id])
     if @checkin.save
       render 'api/checkins/show'

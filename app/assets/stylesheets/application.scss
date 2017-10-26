@@ -446,3 +446,25 @@ aside h2 {
   font-size: 20px;
   margin-bottom: 10px;
 }
+
+input[type="range"] {
+  width: 55%;
+  margin: 20px;
+  margin-left: 0;
+}
+
+.range-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.range-container span {
+  font-size: 24px;
+  margin: 20px;
+  margin-left: 0;
+}
+
+.checkin-form textarea {
+  margin-top: 20px;
+}

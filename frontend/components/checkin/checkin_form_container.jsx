@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import CheckinForm from './checkin_form.jsx';
 import { fetchBeer } from '../../actions/beer_actions';
+import { createCheckin } from '../../actions/checkin_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchBeer: id => dispatch(fetchBeer(id))
+    fetchBeer: id => dispatch(fetchBeer(id)),
+    createCheckin: checkin => dispatch(createCheckin(checkin))
   };
 };
 
