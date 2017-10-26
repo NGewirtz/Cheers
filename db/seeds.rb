@@ -26,5 +26,6 @@ Checkin.destroy_all
 Checkin.create!(beer_id: beer1.id, user_id: user1.id, body: 'i love this beer', rating: 5)
 Checkin.create!(beer_id: beer1.id, user_id: user2.id, body: 'i hate this beer', rating: 1)
 Checkin.create!(beer_id: beer2.id, user_id: user1.id, body: 'i love this beer', rating: 5)
+Checkin.create!(beer_id: beer2.id, user_id: user2.id, body: 'im ok with this beer', rating: 2)
 Checkin.create!(beer_id: beer3.id, user_id: user1.id, body: 'i love this beer', rating: 5)
 Checkin.create!(beer_id: beer4.id, user_id: user1.id, body: 'i dont love this beer', rating: 3)

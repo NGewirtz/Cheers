@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../header';
 import Sidebar from '../sidebar/sidebar_container';
+import CheckinIndexItem from './checkin_index_item';
 
 class CheckinIndex extends React.Component {
 
@@ -9,7 +10,9 @@ class CheckinIndex extends React.Component {
   }
 
   render() {
-    const checkins = ['qqq','sdfg'];
+    const checkins = this.props.checkins.map(checkin => (
+      <CheckinIndexItem checkin={checkin} key={checkin.id}/>
+    ));
     return (
       <div className='wrapper'>
         <Header />

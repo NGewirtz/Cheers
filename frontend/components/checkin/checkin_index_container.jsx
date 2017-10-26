@@ -4,7 +4,7 @@ import { fetchCheckins } from '../../actions/checkin_actions';
 
 const mapStateToProps = (state) => {
   return {
-
+    checkins: Object.values(state.entities.checkins)
   };
 };
 
