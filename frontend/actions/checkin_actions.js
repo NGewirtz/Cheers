@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/checkin_api_util';
+import { receiveSessionErrors } from './session_actions';
 
 export const RECEIVE_ALL_CHECKINS = "RECEIVE_ALL_CHECKINS";
 export const RECEIVE_CHECKIN = "RECEIVE_CHECKIN";
@@ -22,5 +23,6 @@ export const fetchCheckins = (filter) => dispatch => (
 );
 
 export const createCheckin = checkin => dispatch => (
-  APIUtil.createCheckin(checkin).then(checkin => dispatch(receiveCheckin(checkin)))
+  APIUtil.createCheckin(checkin).then(checkin => dispatch(receiveCheckin(checkin)),
+  errors => dispatch(receiveSessionErrors(errors)))
 );

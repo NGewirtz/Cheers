@@ -16,7 +16,14 @@ class CheckinForm extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clearErrors();
     this.props.fetchBeer(this.props.match.params.beerId);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if(this.props.location !== newProps.location) {
+      this.props.fetchBeer(newProps.match.params.beerId);
+    }
   }
 
   handleSubmit(e){
@@ -32,11 +39,17 @@ class CheckinForm extends React.Component {
 
   render() {
     if(!this.props.beer) {
-      return <h1>Loading</h1>;
+      return <Header />;
     }else {
+      const errors = this.props.errors.map((error, idx) => (
+        <li key={idx}>{error}</li>
+      ));
       return (
         <div className='wrapper'>
           <Header />
+          <ul className='checkin-form-errors'>
+            {errors}
+          </ul>
           <form onSubmit={this.handleSubmit} className='checkin-form'>
             <SidebarItem beer={this.props.beer} />
             <textarea onChange={this.handleChange("body")} placeholder="Describe this beer"/>

@@ -40,13 +40,13 @@ class BeerForm extends React.Component {
 
   render() {
     if (!this.props.beer) {
-      return <h1>Loading....</h1>;
+      return <Header />;
     }else {
       const breweries = this.props.breweries.map(brewery => (
         <option key={brewery.id} value={brewery.id}>{brewery.name}</option>
       ));
-      const errors = this.props.errors.map(error => (
-        <li>{error}</li>
+      const errors = this.props.errors.map((error, idx) => (
+        <li key={idx}>{error}</li>
       ));
       return (
         <div className="wrapper">

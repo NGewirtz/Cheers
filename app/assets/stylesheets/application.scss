@@ -381,13 +381,13 @@ aside h2 {
   margin-bottom: 80px;
 }
 
-.beer-form-errors {
+.beer-form-errors, .checkin-form-errors {
   margin: 0 auto;
   text-align: center;
   margin-top: 20px;
 }
 
-.beer-form-errors li {
+.beer-form-errors li, .checkin-form-errors li {
   color: black;
   font-size: 18px;
 }
