@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../header';
+import { date } from '../../util/date_util';
 
 const BeerShowItem = ({beer}) => {
   if(!beer){
@@ -19,7 +20,7 @@ const BeerShowItem = ({beer}) => {
           <li>Abv: {beer.abv || "N/A"}</li>
           <li>***** (#)</li>
           <li>Ratings: </li>
-          <li>Added: {beer.created_at.slice(0, 10)}</li>
+          <li>Added: {date(beer.created_at)}</li>
         </ul>
         <p>{beer.description}</p>
         <nav>

@@ -16,6 +16,7 @@ class CheckinIndex extends React.Component {
     return (
       <div className='wrapper'>
         <Header />
+        <h1 className="bar-header">Bar Talk</h1>
         <main>
           <ul className='checkin-index-ul'>
             {checkins}

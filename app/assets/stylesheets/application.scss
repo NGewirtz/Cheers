@@ -278,7 +278,7 @@ li:hover .user-options {
   font-size: 22px;
 }
 
-.beer-index-item-text h3:hover, .sidebar-item h3:hover {
+.beer-index-item-text h3:hover, .sidebar-item h3:hover, .checkin-link:hover {
   color: #ffcc00;
 }
 
@@ -343,7 +343,7 @@ aside h2 {
   margin: 10px;
 }
 
-.sidebar-item h3 {
+.sidebar-item h3, .checkin-link {
   margin-top: 10px;
   color: #efb134;
   font-size: 20px;
@@ -415,4 +415,34 @@ aside h2 {
 .star-rating {
   background-color: #ffcc00;
   height: 100%;
+}
+
+.checkin-index-item {
+  display: flex;
+  height: 100px;
+  margin: 20px;
+}
+
+.checkin-index-item img {
+  width: 10%;
+}
+
+.checkin-index-item div {
+  width: 80%;
+}
+
+.bar-header {
+  margin-left: 5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.small {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.checkin-text {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
