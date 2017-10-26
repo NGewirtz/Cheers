@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { date, formatNum } from '../../util/date_util';
+import Rating from '../rating';
 
 const BeerIndexItem = ({beer}) => {
   const width = beer.rating * 20 + "%";
@@ -17,12 +18,12 @@ const BeerIndexItem = ({beer}) => {
       <ul>
         <li>Ibu: {beer.ibu || "N/A"}</li>
         <li>Abv: {beer.abv || "N/A"}</li>
-        <li>({formatNum(beer.rating)})<div style={{width}} className="star-rating"></div>&#9734; &#9734; &#9734; &#9734; &#9734;</li>
+        <li><Rating rating={formatNum(beer.rating)} /></li>
         <li>Ratings: {beer.ratings}</li>
         <li>Added: {date(beer.created_at)}</li>
       </ul>
     </li>
-  )
+  );
 };
 
 export default BeerIndexItem;
