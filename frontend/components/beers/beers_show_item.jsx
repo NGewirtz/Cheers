@@ -24,7 +24,7 @@ const BeerShowItem = ({beer}) => {
         </ul>
         <p>{beer.description}</p>
         <nav>
-          <button className="add-button" title="Checkin Beer">&#10004;</button>
+          <Link to={`/beers/${beer.id}/checkin`}><button className="add-button" title="Checkin Beer">&#10004;</button></Link>
           <button className="add-button" title="Add To Wish List">+</button>
         </nav>
       </li>

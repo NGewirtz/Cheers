@@ -173,7 +173,7 @@ input[type="submit"]:hover, .add-image:hover {
   border: 3px solid transparent;
 }
 
-.beer-form input, .beer-form textarea, select {
+.beer-form input, .beer-form textarea, select, .checkin-form textarea {
   border: 3px solid #f3f2ea;
 }
 
@@ -349,7 +349,7 @@ aside h2 {
   font-size: 20px;
 }
 
-.beer-form {
+.beer-form, .checkin-form {
   background-color: white;
   width: 40%;
   height: 600px;
