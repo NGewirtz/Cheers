@@ -10,7 +10,7 @@ const BeerShowItem = ({beer}) => {
       <li className="beer-index-item beer-show-item">
         <img />
         <div className="beer-index-item-text">
-          <Link to={`/beers/${beer.id}/edit`}><h3>{beer.name}</h3></Link>
+          <Link to={`/beers/${beer.id}/edit`} title={`Edit ${beer.name} here`}><h3>{beer.name}</h3></Link>
           <h4>{beer.breweryName}</h4>
           <h5>{beer.beer_type}</h5>
         </div>

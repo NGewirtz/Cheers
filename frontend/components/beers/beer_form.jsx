@@ -19,7 +19,7 @@ class BeerForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if ((newProps.location.pathname !== "/beers/new") && (this.props.location != newProps.location)) {
+    if ((newProps.location.pathname !== "/beers/new") && (this.props.location !== newProps.location)) {
       this.props.fetchBeer(newProps.match.params.beerId);
     }else if($.isEmptyObject(this.props.breweries)){
       this.props.fetchBreweries();
@@ -69,7 +69,7 @@ class BeerForm extends React.Component {
           </div>
           <textarea onChange={this.handleChange('description')}
             value={this.state.description} placeholder="Description"/>
-          <input type='submit' value='Add Beer'/>
+          <input type='submit' value={this.props.formType}/>
           <ul className='beer-form-errors'>
             {errors}
           </ul>

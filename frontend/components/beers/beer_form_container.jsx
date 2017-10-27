@@ -5,16 +5,19 @@ import { clearErrors } from '../../actions/session_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
-  let beer;
+  let beer, formType;
   if (ownProps.location.pathname === "/beers/new" ) {
     beer = { name: '', description: '', brewery_id: '', abv: '', ibu: '', beer_type: ''};
+    formType = "Add Beer";
   }else {
     beer = state.entities.beers[ownProps.match.params.beerId];
+    formType = "Edit Beer";
   }
   return {
     beer,
     breweries: Object.values(state.entities.breweries),
-    errors: state.errors
+    errors: state.errors,
+    formType
   };
 };
 
