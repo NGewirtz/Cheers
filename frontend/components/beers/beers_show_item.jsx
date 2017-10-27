@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../header';
-import { date } from '../../util/date_util';
+import { _date } from '../../util/format_util';
 
 const BeerShowItem = ({beer}) => {
   if(!beer){
-    return <Header />;
+    return <div></div>;
   }else{
     return(
       <li className="beer-index-item beer-show-item">
@@ -20,7 +19,7 @@ const BeerShowItem = ({beer}) => {
           <li>Abv: {beer.abv || "N/A"}</li>
           <li>***** (#)</li>
           <li>Ratings: </li>
-          <li>Added: {date(beer.created_at)}</li>
+          <li>Added: {_date(beer.created_at)}</li>
         </ul>
         <p>{beer.description}</p>
         <nav>

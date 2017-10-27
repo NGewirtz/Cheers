@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../header';
 import BeerIndexItem from './beers_index_item';
 import { Link } from 'react-router-dom';
 import SidebarContainer from '../sidebar/sidebar_container';
@@ -16,8 +15,7 @@ class BeerIndex extends React.Component {
       <BeerIndexItem beer={beer} key={beer.id} />
     ));
     return (
-      <div className="wrapper">
-        <Header />
+      <div>
         <section className="beers-top">
           <Link to='/beers/new'><button className="add-button"
             title="Add A Beer">+</button></Link>

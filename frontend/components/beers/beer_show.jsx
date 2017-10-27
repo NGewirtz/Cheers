@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../header';
 import BeerShowItem from './beers_show_item';
 import Sidebar from '../sidebar/sidebar_container';
 
@@ -17,16 +16,13 @@ class BeerShow extends React.Component {
 
   render() {
     if (!this.props.beer) {
-      return <Header />;
+      return <div></div>;
     }else {
       return (
-        <div className='wrapper'>
-          <Header />
-          <main>
-            <BeerShowItem beer={this.props.beer}/>
-            <Sidebar />
-          </main>
-        </div>
+        <main>
+          <BeerShowItem beer={this.props.beer}/>
+          <Sidebar />
+        </main>
       );
     }
   }

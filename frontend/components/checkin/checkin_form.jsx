@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../header';
 import SidebarItem from '../sidebar/sidebar_item';
 
 class CheckinForm extends React.Component {
@@ -39,27 +38,24 @@ class CheckinForm extends React.Component {
 
   render() {
     if(!this.props.beer) {
-      return <Header />;
+      return <div></div>;
     }else {
       const errors = this.props.errors.map((error, idx) => (
         <li key={idx}>{error}</li>
       ));
       return (
-        <div className='wrapper'>
-          <Header />
+        <form onSubmit={this.handleSubmit} className='checkin-form'>
+          <SidebarItem beer={this.props.beer} />
+          <textarea onChange={this.handleChange("body")} placeholder="Describe this beer"/>
+          <div className="range-container">
+            <input onChange={this.handleChange("rating")} type="range" min="0" max="5"/>
+            <span>Rating: {this.state.rating} &#9734; </span>
+          </div>
+          <input type='submit' value='Add Checkin'/>
           <ul className='checkin-form-errors'>
             {errors}
           </ul>
-          <form onSubmit={this.handleSubmit} className='checkin-form'>
-            <SidebarItem beer={this.props.beer} />
-            <textarea onChange={this.handleChange("body")} placeholder="Describe this beer"/>
-            <div className="range-container">
-              <input onChange={this.handleChange("rating")} type="range" min="0" max="5"/>
-              <span>Rating: {this.state.rating} &#9734; </span>
-            </div>
-            <input type='submit' value='Add Checkin'/>
-          </form>
-        </div>
+        </form>
       );
     }
   }

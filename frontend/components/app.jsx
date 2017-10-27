@@ -10,9 +10,11 @@ import BeerShow from './beers/beer_show_container.jsx';
 import Bar from './checkin/checkin_index_container.jsx';
 import CheckinForm from './checkin/checkin_form_container.jsx';
 import CheckinShow from './checkin/checkin_show_container.jsx';
+import Header from './header';
 
 const App = () => (
-  <div>
+  <div class="wrapper">
+    <ProtectedRoute path="/" component={Header} />
     <Switch>
       <ProtectedRoute path="/users" component={Profile} />
       <ProtectedRoute exact path="/beers/new" component={BeerForm} />

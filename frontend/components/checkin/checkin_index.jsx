@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../header';
 import Sidebar from '../sidebar/sidebar_container';
 import CheckinIndexItem from './checkin_index_item';
 
@@ -14,8 +13,7 @@ class CheckinIndex extends React.Component {
       <CheckinIndexItem checkin={checkin} key={checkin.id}/>
     ));
     return (
-      <div className='wrapper'>
-        <Header />
+      <div>
         <h1 className="bar-header">Bar Talk</h1>
         <main>
           <ul className='checkin-index-ul'>
