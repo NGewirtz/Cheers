@@ -3,6 +3,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, uniqueness: true
   has_many :checkins
+  has_many :comments
 
   attr_reader :password
 

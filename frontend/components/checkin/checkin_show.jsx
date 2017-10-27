@@ -2,16 +2,19 @@ import React from 'react';
 import SidebarItem from '../sidebar/sidebar_item';
 import Rating from '../rating';
 import { Link } from 'react-router-dom';
+import CheckinComments from './checkin_comments';
 
 class CheckinShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchCheckin(this.props.match.params.checkinId);
+    this.props.fetchComments(this.props.match.params.checkinId);
   }
 
   componentWillReceiveProps(newProps) {
     if(this.props.location !== newProps.location) {
       this.props.fetchCheckin(newProps.match.params.checkinId);
+      this.props.fetchComments(this.props.match.params.checkinId);
     }
   }
 
@@ -43,11 +46,7 @@ class CheckinShow extends React.Component {
               <img className="user-header-img" src="http://www.pathcenter.co.il/wp-content/uploads/2014/03/user_icon.png"/>
             </div>
           </section>
-          <section className="comments">
-            <ul>
-              <li>Comments here</li>
-            </ul>
-          </section>
+          <CheckinComments comments={this.props.comments} />
           <form className="comment-form">
             <textarea placeholder="Leave a comment" />
             <button>Post</button>

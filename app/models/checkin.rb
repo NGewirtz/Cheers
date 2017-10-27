@@ -4,6 +4,7 @@ class Checkin < ApplicationRecord
   validates :user, uniqueness: { scope:  :beer }
   belongs_to :user
   belongs_to :beer
+  has_many :comments
 
   has_one :brewery,
     through: :beer,

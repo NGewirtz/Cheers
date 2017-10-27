@@ -23,9 +23,15 @@ beer4 = Beer.create!(brewery_id: brew2.id, name: "IPA4", beer_type: "IPA", descr
 
 
 Checkin.destroy_all
-Checkin.create!(beer_id: beer1.id, user_id: user1.id, body: 'i love this beer', rating: 5)
-Checkin.create!(beer_id: beer1.id, user_id: user2.id, body: 'i hate this beer', rating: 1)
-Checkin.create!(beer_id: beer2.id, user_id: user1.id, body: 'i love this beer', rating: 5)
-Checkin.create!(beer_id: beer2.id, user_id: user2.id, body: 'im ok with this beer', rating: 2)
-Checkin.create!(beer_id: beer3.id, user_id: user1.id, body: 'i love this beer', rating: 5)
-Checkin.create!(beer_id: beer4.id, user_id: user1.id, body: 'i dont love this beer', rating: 3)
+checkin1 = Checkin.create!(beer_id: beer1.id, user_id: user1.id, body: 'i love this beer', rating: 5)
+checkin2 = Checkin.create!(beer_id: beer1.id, user_id: user2.id, body: 'i hate this beer', rating: 1)
+checkin3 = Checkin.create!(beer_id: beer2.id, user_id: user1.id, body: 'i love this beer', rating: 5)
+checkin4 = Checkin.create!(beer_id: beer2.id, user_id: user2.id, body: 'im ok with this beer', rating: 2)
+checkin5 = Checkin.create!(beer_id: beer3.id, user_id: user1.id, body: 'i love this beer', rating: 5)
+checkin6 = Checkin.create!(beer_id: beer4.id, user_id: user1.id, body: 'i dont love this beer', rating: 3)
+
+Comment.destroy_all
+Comment.create!(checkin_id: checkin1.id, user_id: user1.id, body: "My first comment!!")
+Comment.create!(checkin_id: checkin1.id, user_id: user2.id, body: "My 2 comment!!")
+Comment.create!(checkin_id: checkin2.id, user_id: user1.id, body: "My 3 comment!!")
+Comment.create!(checkin_id: checkin3.id, user_id: user2.id, body: "My 4 comment!!")
