@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import CheckinShow from './checkin_show.jsx';
 import { fetchCheckin } from '../../actions/checkin_actions';
-import { fetchComments } from '../../actions/comment_actions';
+import { fetchComments, createComment } from '../../actions/comment_actions';
+import { clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -14,7 +15,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchCheckin: id => dispatch(fetchCheckin(id)),
-    fetchComments: id => dispatch(fetchComments(id))
+    fetchComments: id => dispatch(fetchComments(id)),
+    createComment: comment => dispatch(createComment(comment)),
+    clearErrors: () => dispatch(clearErrors)
   };
 };
 

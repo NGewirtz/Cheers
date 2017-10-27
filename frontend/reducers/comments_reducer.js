@@ -6,7 +6,7 @@ const CommentReducer = (state = {}, action) => {
     case RECEIVE_ALL_COMMENTS:
       return Object.assign({}, action.comments );
     case RECEIVE_COMMENT:
-      return Object.assign({}, { [action.comment.id]: action.comment });
+      return Object.assign({}, state, { [action.comment.id]: action.comment });
     default:
       return state;
   }

@@ -6,6 +6,28 @@ import CheckinComments from './checkin_comments';
 
 class CheckinShow extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      body: "",
+      checkinId: this.props.match.params.checkinId
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createComment(this.state).then(() => {
+      this.props.clearErrors();
+      this.setState({ body: '' });
+    });
+  }
+
+  handleChange(e) {
+    this.setState({ body: e.target.value });
+  }
+
   componentDidMount() {
     this.props.fetchCheckin(this.props.match.params.checkinId);
     this.props.fetchComments(this.props.match.params.checkinId);
@@ -14,7 +36,7 @@ class CheckinShow extends React.Component {
   componentWillReceiveProps(newProps) {
     if(this.props.location !== newProps.location) {
       this.props.fetchCheckin(newProps.match.params.checkinId);
-      this.props.fetchComments(this.props.match.params.checkinId);
+      this.props.fetchComments(newProps.match.params.checkinId);
     }
   }
 
@@ -47,8 +69,8 @@ class CheckinShow extends React.Component {
             </div>
           </section>
           <CheckinComments comments={this.props.comments} />
-          <form className="comment-form">
-            <textarea placeholder="Leave a comment" />
+          <form onSubmit={this.handleSubmit} className="comment-form">
+            <textarea value={this.state.body} onChange={this.handleChange} placeholder="Leave a comment" />
             <button>Post</button>
           </form>
         </article>

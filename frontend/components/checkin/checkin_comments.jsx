@@ -1,8 +1,8 @@
 import React from 'react';
 
 const CheckinComments = ({comments}) => {
-  const commentItems = comments.map(comment => (
-    <li>{comment.username} said {comment.body}</li>
+  const commentItems = comments.map((comment, idx) => (
+    <li key={idx}>{comment.username} said {comment.body}</li>
   ));
   return (
     <section className="comments">

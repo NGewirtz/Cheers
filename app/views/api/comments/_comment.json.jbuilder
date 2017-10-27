@@ -1,2 +1,2 @@
-json.extract! comment, :body
+json.extract! comment, :body, :id
 json.username comment.user.username
