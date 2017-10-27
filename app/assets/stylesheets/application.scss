@@ -64,6 +64,8 @@ button {
 
 .wrapper {
   background-color: #f3f2ea;
+  height: 100vh;
+  overflow: auto;
 }
 
 .add-button, .cheers-button {
@@ -164,18 +166,18 @@ form {
   padding: 40px;
 }
 
-input, .add-image, textarea, select {
+input, .add-image, textarea, select, .comment-form button {
  margin: 5px;
  font-size: 20px;
  border-radius: 5px;
  padding: 5px;
 }
 
-input[type="submit"]:hover, .add-image:hover {
+input[type="submit"]:hover, .add-image:hover, .comment-form button:hover {
   background-color: #efb134;
 }
 
-.user-form input, .add-image{
+.user-form input, .add-image, .comment-form button {
   border: 3px solid transparent;
 }
 
@@ -183,7 +185,7 @@ input[type="submit"]:hover, .add-image:hover {
   border: 3px solid #f3f2ea;
 }
 
-input[type="submit"], .add-image {
+input[type="submit"], .add-image, .comment-form button {
   background-color: #ffcc00;
   color: white;
   text-transform: capitalize;
@@ -361,7 +363,7 @@ aside h2 {
   margin-right: 20px;
 }
 
-.sidebar-item h3, .checkin-link {
+.sidebar-item h3, .checkin-link, .comments a {
   margin-top: 10px;
   color: #c60;
   font-size: 20px;
@@ -498,9 +500,17 @@ input[type="range"] {
 
 .checkin-show-body header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
   align-items: center;
   padding: 30px;
+}
+
+.checkin-show-body header section {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
 
 .checkin-show-body header img {
@@ -513,7 +523,17 @@ input[type="range"] {
   font-size: 26px;
   text-transform: capitalize;
   font-weight: bold;
-  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.checkin-show-body p {
+  color: #a9a9a9;
+}
+
+.checkin-show-body hr {
+  margin: 0;
+  margin-bottom: 10px;
+  color: #f3f2ea;
 }
 
 .checkin-show-rating {
@@ -545,7 +565,34 @@ input[type="range"] {
 
 .comment-form {
   width: 100%;
+  padding: 0;
+  background-color: white;
+  margin-bottom: 50px;
 }
+
+.comment-form  p {
+  margin-left: 10px;
+}
+
+.comment-form textarea {
+  border: 3px solid #f3f2ea;
+}
+
+.comments {
+  background-color: white;
+  padding: 15px;
+}
+
+.comments span {
+  padding: 15px;
+  vertical-align: super;
+}
+
+.comments li {
+  padding: 15px;
+  border-bottom: 2px solid #f3f2ea;
+}
+
 
 
 // -----https://codepen.io/Bluetidepro/pen/GkpEa A PEN BY Zach Reed---

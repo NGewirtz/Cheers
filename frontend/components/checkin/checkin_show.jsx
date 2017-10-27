@@ -1,8 +1,8 @@
 import React from 'react';
 import SidebarItem from '../sidebar/sidebar_item';
 import Rating from '../rating';
-import { Link } from 'react-router-dom';
 import CheckinComments from './checkin_comments';
+import CheckinShowHeader from './checkin_show_header';
 
 class CheckinShow extends React.Component {
 
@@ -48,10 +48,8 @@ class CheckinShow extends React.Component {
       const beer = { id: checkin.beerId, name: checkin.beer, breweryName: checkin.brewery };
       return (
         <article className="checkin-show-body">
-          <header>
-            <img />
-            <h2><Link to={`/users/${checkin.usernameId}`}>{checkin.username}</Link></h2>
-          </header>
+          <CheckinShowHeader checkin={checkin} />
+          <hr></hr>
           <SidebarItem beer={beer} />
           <section className="checkin-show-rating">
             <h3>{checkin.body}</h3>
@@ -70,7 +68,8 @@ class CheckinShow extends React.Component {
           </section>
           <CheckinComments comments={this.props.comments} />
           <form onSubmit={this.handleSubmit} className="comment-form">
-            <textarea value={this.state.body} onChange={this.handleChange} placeholder="Leave a comment" />
+            <textarea value={this.state.body} onChange={this.handleChange} placeholder="Leave a comment..." />
+            <p>{this.state.body.length}/140</p>
             <button>Post</button>
           </form>
         </article>
