@@ -27,12 +27,16 @@
    background: transparent;
  }
 
- h3, h4, h5 {
-   margin: 0;
-   border: 0;
-   padding: 0;
-   outline: 0;
- }
+h3, h4, h5 {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+}
+
+h1, h2, h3, h4, h5, p, span, li {
+  font-family: 'Noto Serif', serif;
+}
 
 ul {
   list-style: none;
@@ -50,6 +54,10 @@ header + h1, .beers-top h1 {
 
 hr {
   margin: 10px;
+}
+
+button {
+  border: 0;
 }
 
 .wrapper {
@@ -157,14 +165,6 @@ input, .add-image, textarea, select {
  padding: 5px;
 }
 
-input[type="submit"], .add-image {
- background-color: #ffcc00;
- color: white;
- text-transform: capitalize;
- margin-top: 25px;
- font-size: 24px;
-}
-
 input[type="submit"]:hover, .add-image:hover {
   background-color: #efb134;
 }
@@ -175,6 +175,15 @@ input[type="submit"]:hover, .add-image:hover {
 
 .beer-form input, .beer-form textarea, select, .checkin-form textarea {
   border: 3px solid #f3f2ea;
+}
+
+input[type="submit"], .add-image {
+  background-color: #ffcc00;
+  color: white;
+  text-transform: capitalize;
+  margin-top: 25px;
+  font-size: 24px;
+  border: 0;
 }
 
 input:focus, textarea:focus, select:focus {
@@ -274,7 +283,7 @@ li:hover .user-options {
 }
 
 .beer-index-item-text h3 {
-  color: #efb134;
+  color: #c60;
   font-size: 22px;
 }
 
@@ -345,8 +354,9 @@ aside h2 {
 
 .sidebar-item h3, .checkin-link {
   margin-top: 10px;
-  color: #efb134;
+  color: #c60;
   font-size: 20px;
+  text-transform: capitalize;
 }
 
 .checkin-show-body {

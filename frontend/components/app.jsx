@@ -13,7 +13,7 @@ import CheckinShow from './checkin/checkin_show_container.jsx';
 import Header from './header';
 
 const App = () => (
-  <div class="wrapper">
+  <div className="wrapper">
     <ProtectedRoute path="/" component={Header} />
     <Switch>
       <ProtectedRoute path="/users" component={Profile} />

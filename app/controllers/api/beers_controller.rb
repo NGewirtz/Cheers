@@ -1,6 +1,7 @@
 class Api::BeersController < ApplicationController
 
   def index
+    #@beers = Beer.all.includes(:brewery).joins(:checkins).group('beers.id').order('avg(checkins.rating) desc')
     @beers = Beer.all.includes(:brewery)
     render "api/beers/index"
   end
