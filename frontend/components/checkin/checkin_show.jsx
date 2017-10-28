@@ -68,7 +68,7 @@ class CheckinShow extends React.Component {
           </section>
           <CheckinComments comments={this.props.comments} />
           <form onSubmit={this.handleSubmit} className="comment-form">
-            <textarea value={this.state.body} onChange={this.handleChange} placeholder="Leave a comment..." />
+            <textarea maxlength='140' value={this.state.body} onChange={this.handleChange} placeholder="Leave a comment..." />
             <p>{this.state.body.length}/140</p>
             <button>Post</button>
           </form>

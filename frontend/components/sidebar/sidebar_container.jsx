@@ -5,7 +5,7 @@ import { beersSelector } from '../../util/selectors';
 
 const mapStateToProps = (state) => {
   return {
-    beers: state.sidebarItems
+    beers: beersSelector(state.sidebarItems.beers, state.sidebarItems.orderedIds)
   };
 };
 

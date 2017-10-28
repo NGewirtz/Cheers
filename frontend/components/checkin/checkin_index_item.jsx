@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { _dateAndTime, _aOrAn } from '../../util/format_util';
+import Rating from '../rating';
 
 const CheckinIndexItem = ({checkin}) => {
   return (
@@ -11,9 +12,12 @@ const CheckinIndexItem = ({checkin}) => {
         </Link> is drinking {_aOrAn(checkin.beer)} <Link className="checkin-link" to={`/beers/${checkin.beerId}`}>{checkin.beer}
           </Link> from <Link className="checkin-link" to={`/brewery/${checkin.breweryId}`}>{checkin.brewery}</Link>
         </h2>
-        <h2>Rating: <span>({checkin.rating})</span></h2>
-        <p className="small">{ _dateAndTime(checkin.updated_at)} <Link className="checkin-link small" to={`/checkins/${checkin.id}`}>
-          View Detailed Checkin Here</Link></p>
+        <div className="rating-border-div">
+          <Rating rating={checkin.rating} />
+        </div>
+        <p className="small">{ _dateAndTime(checkin.updated_at)}
+          <Link className="checkin-link small" to={`/checkins/${checkin.id}`}>View Detailed Checkin Here</Link>
+        </p>
       </div>
       <img />
     </li>

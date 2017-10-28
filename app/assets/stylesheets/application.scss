@@ -181,6 +181,10 @@ input[type="submit"]:hover, .add-image:hover, .comment-form button:hover {
   border: 3px solid transparent;
 }
 
+.comment-form button {
+  outline: 0;
+}
+
 .beer-form input, .beer-form textarea, select, .checkin-form textarea {
   border: 3px solid #f3f2ea;
 }
@@ -270,6 +274,11 @@ li:hover .user-options {
   margin-left: 5%;
 }
 
+.checkin-index-ul {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .beer-index-item {
   display: flex;
   flex-wrap: wrap;
@@ -342,6 +351,7 @@ aside {
   background-color: white;
   width: 30%;
   margin: 20px;
+  padding-bottom: 50px;
 }
 
 aside h2 {
@@ -444,12 +454,14 @@ aside h2 {
 
 .checkin-index-item {
   display: flex;
-  height: 100px;
+  height: 140px;
   margin: 20px;
+  margin-bottom: 30px;
 }
 
 .checkin-index-item img {
   width: 10%;
+  height: 50%
 }
 
 .checkin-index-item div {
@@ -593,7 +605,31 @@ input[type="range"] {
   border-bottom: 2px solid #f3f2ea;
 }
 
+.checkin-link.small {
+  margin-left: 50px;
+}
 
+.rating-border-div {
+  border: 1px solid #f3f2ea;
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+  padding-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.beer-show-page {
+  flex-wrap: wrap
+}
+
+.beer-show-checkins {
+  background-color: white;
+  width: 57%;
+  margin-left: 5%;
+  margin-top: -350px;
+  margin-bottom: 50px;
+}
 
 // -----https://codepen.io/Bluetidepro/pen/GkpEa A PEN BY Zach Reed---
 //Copyright (c) 2017 by Zach Reed (https://codepen.io/Bluetidepro/pen/GkpEa)

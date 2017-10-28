@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171027145400) do
+ActiveRecord::Schema.define(version: 20171027213103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20171027145400) do
     t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "avg_rating"
     t.index ["brewery_id"], name: "index_beers_on_brewery_id"
   end
 
@@ -64,6 +65,16 @@ ActiveRecord::Schema.define(version: 20171027145400) do
     t.string "img_url", default: "http://www.pathcenter.co.il/wp-content/uploads/2014/03/user_icon.png"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "wishlist_items", force: :cascade do |t|
+    t.integer "beer_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["beer_id", "user_id"], name: "index_wishlist_items_on_beer_id_and_user_id", unique: true
+    t.index ["beer_id"], name: "index_wishlist_items_on_beer_id"
+    t.index ["user_id"], name: "index_wishlist_items_on_user_id"
   end
 
 end

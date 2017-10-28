@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy, :show]
     get '/beers/sidebar', to: 'beers#sidebar'
+    post '/beers/:id/wishlist_items', to: 'beers#wishlist_create'
     resources :beers, only: [:index, :show, :create, :update] do
       resources :checkins, only: [:create]
     end

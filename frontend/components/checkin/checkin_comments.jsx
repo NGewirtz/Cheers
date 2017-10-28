@@ -10,6 +10,9 @@ const CheckinComments = ({comments}) => {
       </span>
     </li>
   ));
+  if(commentItems.length === 0) {
+    commentItems.push(<li>Be The First To Leave A Comment Below</li>);
+  }
   return (
     <section className="comments">
       <ul>

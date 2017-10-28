@@ -9,10 +9,10 @@ class BeerIndex extends React.Component {
     this.props.fetchBeers();
   }
 
-
   render() {
     const beers = this.props.beers.map(beer => (
-      <BeerIndexItem beer={beer} key={beer.id} />
+      <BeerIndexItem beer={beer}
+        addBeerToWishlist={this.props.addBeerToWishlist} key={beer.id} />
     ));
     return (
       <div>

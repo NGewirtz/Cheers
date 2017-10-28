@@ -8,7 +8,7 @@ class Beer < ApplicationRecord
   end
 
   def ratings
-    self.checkins.count(:rating)
+    self.checkins.count(:id)
   end
 
 end

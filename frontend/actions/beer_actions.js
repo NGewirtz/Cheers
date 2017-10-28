@@ -57,6 +57,11 @@ export const updateBeer = beer => dispatch => (
   errors => dispatch(receiveSessionErrors(errors)))
 );
 
+export const addBeerToWishlist = id => dispatch => (
+  APIUtil.addBeerToWishlist(id).then(beer => dispatch(receiveBeer(beer)),
+  errors => dispatch(receiveSessionErrors(errors)))
+);
+
 export const fetchBreweries = () => dispatch => (
   APIUtil.fetchBreweries().then(breweries => dispatch(receiveBreweries(breweries)))
 );

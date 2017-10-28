@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { _date, _decimalNum } from '../../util/format_util';
-import Rating from '../rating';
+import BeerInfoList from './beer_info_list';
 
-const BeerIndexItem = ({beer}) => {
+const BeerIndexItem = ({beer, addBeerToWishlist}) => {
   const width = beer.rating * 20 + "%";
   return (
     <li className="beer-index-item">
@@ -14,15 +13,9 @@ const BeerIndexItem = ({beer}) => {
         <h5>{beer.beer_type}</h5>
         <p>{beer.description}</p>
       </div>
-      <button className="add-button" title="Add To Wish List">+</button>
-      <ul>
-        <li>Ibu: {beer.ibu || "N/A"}</li>
-        <li>Abv: {beer.abv || "N/A"}</li>
-        <li id="star-li"><Rating rating={_decimalNum(beer.rating)} /></li>
-        <li id="star-li-label">({_decimalNum(beer.rating)})</li>
-        <li>Ratings: {beer.ratings}</li>
-        <li>Added: {_date(beer.created_at)}</li>
-      </ul>
+      <button onClick={() => addBeerToWishlist(beer.id)}
+        className="add-button" title="Add To Wish List">+</button>
+      <BeerInfoList beer={beer} />
     </li>
   );
 };

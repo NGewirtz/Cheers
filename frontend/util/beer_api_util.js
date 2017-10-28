@@ -42,3 +42,10 @@ export const fetchBreweries = () => {
     url: '/api/breweries'
   });
 };
+
+export const addBeerToWishlist = beerId => {
+  return $.ajax({
+    method: 'post',
+    url: `/api/beers/${beerId}/wishlist_items`
+  });
+}

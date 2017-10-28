@@ -1,8 +1,7 @@
 class Api::BeersController < ApplicationController
 
   def index
-    #@beers = Beer.all.includes(:brewery).joins(:checkins).group('beers.id').order('avg(checkins.rating) desc')
-    @beers = Beer.all.includes(:brewery)
+    @beers = Beer.all.includes(:brewery).left_outer_joins(:checkins).group('beers.id').order('avg(checkins.rating) desc')
     render "api/beers/index"
   end
 
@@ -16,7 +15,7 @@ class Api::BeersController < ApplicationController
   end
 
   def show
-    @beer = Beer.find(params[:id])
+    @beer = Beer.includes(:checkins).find(params[:id])
     render "api/beers/show"
   end
 
@@ -30,11 +29,15 @@ class Api::BeersController < ApplicationController
   end
 
   def sidebar
-    @beers = Beer.all.includes(:brewery).order(created_at: :desc).limit(10)
+    @beers = Beer.all.includes(:brewery).joins(:checkins).order('checkins.created_at desc').limit(10).uniq
     render 'api/beers/sidebar'
   end
 
-
+  def wishlist_create
+    WishlistItem.create(user_id: current_user.id, beer_id: params[:id])
+    @beer = Beer.find(params[:id])
+    render "api/beers/show"
+  end
 
   private
 
