@@ -10,6 +10,9 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_attached_file :image, default_url: "https://s3.us-east-2.amazonaws.com/cheers-the-app/defaultUser.jpg"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     user && user.valid_password?(password) ? user : nil

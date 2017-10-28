@@ -6,7 +6,7 @@ import Rating from '../rating';
 const CheckinIndexItem = ({checkin}) => {
   return (
     <li className="checkin-index-item">
-      <img />
+      <img src={checkin.userImage}/>
       <div className="beer-index-item-text">
         <h2 className="checkin-text"><Link className="checkin-link" to={`/users/${checkin.usernameId}`}>{checkin.username}
         </Link> is drinking {_aOrAn(checkin.beer)} <Link className="checkin-link" to={`/beers/${checkin.beerId}`}>{checkin.beer}
@@ -19,7 +19,7 @@ const CheckinIndexItem = ({checkin}) => {
           <Link className="checkin-link small" to={`/checkins/${checkin.id}`}>View Detailed Checkin Here</Link>
         </p>
       </div>
-      <img />
+      <img src={checkin.beerImage}/>
     </li>
   );
 };

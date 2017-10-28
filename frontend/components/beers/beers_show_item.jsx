@@ -8,7 +8,7 @@ const BeerShowItem = ({beer, checkins}) => {
   }else{
     return(
       <li className="beer-index-item beer-show-item">
-        <img />
+        <img src={beer.image}/>
         <div className="beer-index-item-text">
           <Link to={`/beers/${beer.id}/edit`} title={`Edit ${beer.name} here`}>
             <h3>{beer.name}</h3>

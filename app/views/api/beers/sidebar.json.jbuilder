@@ -3,6 +3,7 @@ json.beers do
     json.set! beer.id do
       json.extract! beer, :name, :id
       json.breweryName beer.brewery.name
+      json.image beer.image.url
     end
   end
 end

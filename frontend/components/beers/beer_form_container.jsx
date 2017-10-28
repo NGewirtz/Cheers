@@ -7,7 +7,15 @@ import { withRouter } from 'react-router';
 const mapStateToProps = (state, ownProps) => {
   let beer, formType;
   if (ownProps.location.pathname === "/beers/new" ) {
-    beer = { name: '', description: '', brewery_id: '', abv: '', ibu: '', beer_type: ''};
+    beer = { name: '',
+      description: '',
+      brewery_id: '',
+      abv: '',
+      ibu: '',
+      beer_type: '',
+      imageUrl: 'https://s3.us-east-2.amazonaws.com/cheers-the-app/defaultBeer.png',
+      image: ''
+    };
     formType = "Add Beer";
   }else {
     beer = state.entities.beers[ownProps.match.params.beerId];

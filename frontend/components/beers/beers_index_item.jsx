@@ -6,7 +6,7 @@ const BeerIndexItem = ({beer, addBeerToWishlist}) => {
   const width = beer.rating * 20 + "%";
   return (
     <li className="beer-index-item">
-      <img />
+      <img src={beer.image}/>
       <div className="beer-index-item-text">
         <Link to={`/beers/${beer.id}`}><h3>{beer.name}</h3></Link>
         <h4>{beer.breweryName}</h4>

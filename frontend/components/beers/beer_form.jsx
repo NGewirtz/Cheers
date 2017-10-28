@@ -1,4 +1,5 @@
 import React from 'react';
+import { createBeer } from '../../util/beer_api_util';
 
 class BeerForm extends React.Component {
 
@@ -6,6 +7,7 @@ class BeerForm extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleImageUpload = this.handleImageUpload.bind(this);
     this.state = this.props.beer;
   }
 
@@ -23,6 +25,20 @@ class BeerForm extends React.Component {
       this.props.fetchBeer(newProps.match.params.beerId);
     }else if($.isEmptyObject(this.props.breweries)){
       this.props.fetchBreweries();
+    }else if(newProps.beer !== this.state) {
+      this.setState(newProps.beer);
+    }
+  }
+
+  handleImageUpload(e) {
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+    reader.onloadend = () =>
+      this.setState({ imageUrl: reader.result, image: file});
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", image: null });
     }
   }
 
@@ -34,7 +50,13 @@ class BeerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push('/beers'));
+    const file = this.state.image;
+    const formData = new FormData();
+    if (file) formData.append("beer[image]", file);
+    let x = Object.keys(this.state).map(key => {
+      formData.append(`beer[${key}]`, this.state[key]);
+    });
+    this.props.action(formData).then(() => this.props.history.push('/beers'));
   }
 
   render() {
@@ -50,15 +72,18 @@ class BeerForm extends React.Component {
       return (
         <form className="beer-form" onSubmit={this.handleSubmit}>
           <div>
-            <img />
+            <img src={this.state.imageUrl || this.state.image}/>
             <div className="beer-form-top">
               <input onChange={this.handleChange('name')}
                 value={this.state.name} placeholder="Name"/>
               <select onChange={this.handleChange('brewery_id')}
-                value={this.state.brewery_id}> <option value="" selected disabled hidden>Select A Brewery</option>{breweries}</select>
+                value={this.state.brewery_id}>
+                <option value="" selected disabled hidden>Select A Brewery</option>
+                {breweries}
+              </select>
             </div>
           </div>
-          <button className="add-image">Add Image</button>
+          <input type="file" onChange={this.handleImageUpload} className="add-image"></input>
           <div>
             <input className="one-third-form" onChange={this.handleChange('abv')}
               value={this.state.abv} placeholder="Abv"/>
@@ -77,7 +102,6 @@ class BeerForm extends React.Component {
       );
     }
   }
-
 }
 
 export default BeerForm;

@@ -2,3 +2,4 @@ json.extract! beer, :name, :description, :beer_type, :brewery_id, :id, :created_
 json.breweryName beer.brewery.name
 json.rating beer.avg_rating
 json.checkinIds beer.checkins.ids
+json.image beer.image.url

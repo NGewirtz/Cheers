@@ -24,7 +24,10 @@ export const createBeer = beer => {
   return $.ajax({
     method: 'post',
     url: '/api/beers',
-    data: { beer }
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: beer,
   });
 };
 
@@ -32,7 +35,10 @@ export const updateBeer = beer => {
   return $.ajax({
     method: 'patch',
     url: `/api/beers/${beer.id}`,
-    data: { beer }
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: beer
   });
 };
 
@@ -48,4 +54,4 @@ export const addBeerToWishlist = beerId => {
     method: 'post',
     url: `/api/beers/${beerId}/wishlist_items`
   });
-}
+};

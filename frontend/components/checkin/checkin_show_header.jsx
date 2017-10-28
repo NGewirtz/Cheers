@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CheckinShowHeader = ({checkin}) => (
   <header>
     <section>
-      <img />
+      <img src={checkin.userImage}/>
       <h2>
         <Link to={`/users/${checkin.usernameId}`}>{checkin.username}</Link>
       </h2>
