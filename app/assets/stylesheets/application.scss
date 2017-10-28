@@ -66,6 +66,7 @@ button {
   background-color: #f3f2ea;
   height: 100vh;
   overflow: auto;
+  padding-top: 50px
 }
 
 .add-button, .cheers-button {
@@ -210,6 +211,8 @@ input:focus, textarea:focus, select:focus {
   width: 100%;
   height: 50px;
   justify-content: space-between;
+  position: fixed;
+  z-index: 2;
 }
 
 .main-header nav {
@@ -320,6 +323,7 @@ li:hover .user-options {
   border-bottom: 1px solid #dbdee0;
   margin-bottom: 20px;
   margin-top: 20px;
+  overflow: hidden;
 }
 
 .beer-index-item ul li {
@@ -627,12 +631,38 @@ input[type="range"] {
   flex-wrap: wrap
 }
 
+.beer-show-page div:first-child {
+  width: 55%;
+  display: inline-block;
+}
+
+.beer-show-page aside {
+  display: inline-block;
+  margin-left: 10%;
+  margin-top: 50px;
+  position: absolute;
+  margin-top: 50px;
+}
+
+.beer-show-page .beer-show-item {
+  width: 100%;
+  margin-top: 50px;
+}
+
 .beer-show-checkins {
   background-color: white;
-  width: 57%;
+  width: 100%;
   margin-left: 5%;
-  margin-top: -350px;
   margin-bottom: 50px;
+  padding: 20px;
+}
+
+.beer-show-checkins li {
+  justify-content: space-between;
+}
+
+.beer-show-checkins .rating-border-div {
+  text-align: center;
 }
 
 // -----https://codepen.io/Bluetidepro/pen/GkpEa A PEN BY Zach Reed---

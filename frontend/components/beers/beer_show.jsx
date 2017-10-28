@@ -25,13 +25,15 @@ class BeerShow extends React.Component {
         }
       });
       return (
-        <main className="beer-show-page">
-          <BeerShowItem beer={this.props.beer} />
+        <div className="beer-show-page">
+          <div>
+            <BeerShowItem beer={this.props.beer} />
+            <ul className="beer-show-checkins">
+              {checkins}
+            </ul>
+          </div>
           <Sidebar />
-          <ul className="beer-show-checkins">
-            {checkins}
-          </ul>
-        </main>
+        </div>
       );
     }
   }
