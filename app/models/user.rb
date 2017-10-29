@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :checkins
   has_many :comments
   has_many :wishlist_items
+  has_many :cheers
 
   attr_reader :password
 

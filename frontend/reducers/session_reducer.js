@@ -2,7 +2,8 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 const defaultUser = Object.freeze({
   currentUser: null,
-  userImg: null
+  userImg: null,
+  id: null
 });
 
 const SessionReducer = (state = defaultUser, action) => {
@@ -10,7 +11,7 @@ const SessionReducer = (state = defaultUser, action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, { currentUser: action.currentUser.username,
-        userImg: action.currentUser.image });
+        userImg: action.currentUser.image, id: action.currentUser.id });
     default:
       return state;
   }

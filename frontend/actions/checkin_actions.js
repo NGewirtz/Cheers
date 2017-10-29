@@ -11,11 +11,12 @@ export const receiveCheckins = checkins => {
   };
 };
 
-export const receiveCheckin = ({ checkin, comments }) => {
+export const receiveCheckin = ({ checkin, comments, users }) => {
   return {
     type: RECEIVE_CHECKIN,
     checkin,
-    comments
+    comments,
+    users
   };
 };
 
@@ -29,5 +30,15 @@ export const fetchCheckin = id => dispatch => (
 
 export const createCheckin = checkin => dispatch => (
   APIUtil.createCheckin(checkin).then(checkin => dispatch(receiveCheckin(checkin)),
+  errors => dispatch(receiveSessionErrors(errors)))
+);
+
+export const cheersCheckin = id => dispatch => (
+  APIUtil.cheersCheckin(id).then(checkin => dispatch(receiveCheckin(checkin)),
+  errors => dispatch(receiveSessionErrors(errors)))
+);
+
+export const deleteCheersCheckin = id => dispatch => (
+  APIUtil.deleteCheersCheckin(id).then(checkin => dispatch(receiveCheckin(checkin)),
   errors => dispatch(receiveSessionErrors(errors)))
 );

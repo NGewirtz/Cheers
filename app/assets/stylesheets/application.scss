@@ -101,6 +101,7 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: auto;
 }
 
 .splash a {
@@ -690,7 +691,13 @@ input[type="range"] {
   justify-content: space-between;
 }
 
+.red:hover {
+  background-color: red;
+}
 
+.green:hover {
+  background-color: green;
+}
 
 // -----https://codepen.io/Bluetidepro/pen/GkpEa A PEN BY Zach Reed---
 //Copyright (c) 2017 by Zach Reed (https://codepen.io/Bluetidepro/pen/GkpEa)

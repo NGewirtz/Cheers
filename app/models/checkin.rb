@@ -5,6 +5,7 @@ class Checkin < ApplicationRecord
   belongs_to :user
   belongs_to :beer
   has_many :comments
+  has_many :cheers
   after_create :update_beer_avg
 
   has_one :brewery,

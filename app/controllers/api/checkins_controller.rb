@@ -15,8 +15,14 @@ class Api::CheckinsController < ApplicationController
   end
 
   def show
-    @checkin = Checkin.find(params[:id])
+    @checkin = Checkin.includes(:cheers).find(params[:id])
     render 'api/checkins/show'
+  end
+
+  def cheers_create
+    Cheer.create(user_id: current_user.id, checkin_id: params[:id])
+    @checkin = Checkin.find(params[:id])
+    render "api/checkins/show"
   end
 
   private

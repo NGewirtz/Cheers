@@ -3,6 +3,7 @@ import SidebarItem from '../sidebar/sidebar_item';
 import Rating from '../rating';
 import CheckinComments from './checkin_comments';
 import CheckinShowHeader from './checkin_show_header';
+import CheckinCheers from './checkin_cheers';
 
 class CheckinShow extends React.Component {
 
@@ -14,6 +15,7 @@ class CheckinShow extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCheers = this.handleCheers.bind(this);
   }
 
   handleSubmit(e) {
@@ -26,6 +28,11 @@ class CheckinShow extends React.Component {
 
   handleChange(e) {
     this.setState({ body: e.target.value });
+  }
+
+  handleCheers(e) {
+    e.preventDefault();
+    this.props.cheersCheckin(this.props.match.params.checkinId);
   }
 
   componentDidMount() {
@@ -53,20 +60,16 @@ class CheckinShow extends React.Component {
             <h3>{checkin.body}</h3>
             <Rating rating={checkin.rating} />
           </section>
-          <section className="cheers-section">
-            <button title="CHEERS!" className="cheers-button">&#x1f37a;</button>
-            <span>5</span>
-            <div>
-              <img className="user-header-img" src="http://www.pathcenter.co.il/wp-content/uploads/2014/03/user_icon.png"/>
-              <img className="user-header-img" src="http://www.pathcenter.co.il/wp-content/uploads/2014/03/user_icon.png"/>
-              <img className="user-header-img" src="http://www.pathcenter.co.il/wp-content/uploads/2014/03/user_icon.png"/>
-              <img className="user-header-img" src="http://www.pathcenter.co.il/wp-content/uploads/2014/03/user_icon.png"/>
-              <img className="user-header-img" src="http://www.pathcenter.co.il/wp-content/uploads/2014/03/user_icon.png"/>
-            </div>
-          </section>
+          <CheckinCheers cheersCheckin={this.props.cheersCheckin}
+            deleteCheersCheckin={this.props.deleteCheersCheckin}
+            users={this.props.users}
+            cheerUserIds={checkin.cheerUserIds || []}
+            checkinId={checkin.id}
+            cheered={this.props.cheered} />
           <CheckinComments comments={this.props.comments} />
           <form onSubmit={this.handleSubmit} className="comment-form">
-            <textarea maxLength='140' value={this.state.body} onChange={this.handleChange} placeholder="Leave a comment..." />
+            <textarea maxLength='140' value={this.state.body}
+              onChange={this.handleChange} placeholder="Leave a comment..." />
             <p>{this.state.body.length}/140</p>
             <button>Post</button>
           </form>

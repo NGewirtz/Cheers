@@ -35,3 +35,17 @@ export const deleteCheckin = id => {
     url: `/api/checkins/${id}`
   });
 };
+
+export const cheersCheckin = checkinId => {
+  return $.ajax({
+    method: 'post',
+    url: `/api/checkins/${checkinId}/cheers`
+  });
+};
+
+export const deleteCheersCheckin = checkinId => {
+  return $.ajax({
+    method: 'delete',
+    url: `/api/cheers/${checkinId}`
+  });
+};

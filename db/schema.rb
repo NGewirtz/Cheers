@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171028174028) do
+ActiveRecord::Schema.define(version: 20171029164306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(version: 20171028174028) do
     t.index ["beer_id", "user_id"], name: "index_checkins_on_beer_id_and_user_id", unique: true
     t.index ["beer_id"], name: "index_checkins_on_beer_id"
     t.index ["user_id"], name: "index_checkins_on_user_id"
+  end
+
+  create_table "cheers", force: :cascade do |t|
+    t.integer "checkin_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["checkin_id", "user_id"], name: "index_cheers_on_checkin_id_and_user_id", unique: true
+    t.index ["checkin_id"], name: "index_cheers_on_checkin_id"
+    t.index ["user_id"], name: "index_cheers_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|

@@ -9,3 +9,11 @@ json.comments do
     end
   end
 end
+
+json.users do
+  @checkin.cheers.each do |cheer|
+    json.set! cheer.user.id do
+      json.partial! 'api/users/user', user: cheer.user
+    end
+  end
+end
