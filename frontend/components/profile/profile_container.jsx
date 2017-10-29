@@ -1,15 +1,18 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { logout } from '../../actions/session_actions';
+import { fetchUser } from '../../actions/user_actions';
 import Profile from './profile';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  return {
+    user: state.entities.users[ownProps.match.params.userId]
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logout: () => dispatch(logout())
+    fetchUser: id => dispatch(fetchUser(id))
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile));

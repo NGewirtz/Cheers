@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.currentUser) {
     const preloadedState = { session: {
       currentUser: window.currentUser.username,
-      userImg: window.currentUser.img_url
+      userImg: window.currentUser.image
     }
   };
   store = configureStore(preloadedState);

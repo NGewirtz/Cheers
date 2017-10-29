@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CheckinComments = ({comments}) => {
   const commentItems = comments.map((comment, idx) => (
     <li key={idx}>
-      <img className="user-header-img" src="http://www.pathcenter.co.il/wp-content/uploads/2014/03/user_icon.png"/>
+      <img className="user-header-img" src={comment.image}/>
       <span>
         <Link to={`/users/${comment.userId}`}>{comment.username}</Link> said {comment.body}
       </span>

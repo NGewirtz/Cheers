@@ -3,7 +3,7 @@ import { Route, Redirect, Link,  HashRouter, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashPage from './splash_page';
 import SessionFormContainer from './session/session_form_container';
-import Profile from './profile/profile';
+import Profile from './profile/profile_container';
 import BeerIndex from './beers/beers_index_container';
 import BeerForm from './beers/beer_form_container.jsx';
 import BeerShow from './beers/beer_show_container.jsx';
@@ -17,7 +17,7 @@ const App = () => (
     <ProtectedRoute path="/" component={Header} />
     <div className="wrapper">
       <Switch>
-        <ProtectedRoute path="/users" component={Profile} />
+        <ProtectedRoute path="/users/:userId" component={Profile} />
         <ProtectedRoute exact path="/beers/new" component={BeerForm} />
         <ProtectedRoute path="/beers/:beerId/edit" component={BeerForm} />
         <ProtectedRoute path="/beers/:beerId/checkin" component={CheckinForm} />
