@@ -13,7 +13,7 @@ class CheckinIndex extends React.Component {
       <CheckinIndexItem checkin={checkin} key={checkin.id}/>
     ));
     return (
-      <div>
+      <div className="top">
         <h1 className="bar-header">Bar Talk</h1>
         <main>
           <ul className='checkin-index-ul'>

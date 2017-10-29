@@ -19,13 +19,13 @@ class BeerShow extends React.Component {
     if (!this.props.beer) {
       return <div></div>;
     }else {
-      const checkins = this.props.beer.checkinIds.map(checkinId => {
-        if (this.props.beer.checkins) {
-          return <CheckinIndexItem checkin={this.props.beer.checkins[checkinId]} key={checkinId}/>
+      const checkins = this.props.checkins.map(checkin => {
+        if (checkin) {
+          return <CheckinIndexItem checkin={checkin} key={checkin.id}/>;
         }
       });
       return (
-        <div className="beer-show-page">
+        <div className="beer-show-page top">
           <div>
             <BeerShowItem beer={this.props.beer} />
             <ul className="beer-show-checkins">

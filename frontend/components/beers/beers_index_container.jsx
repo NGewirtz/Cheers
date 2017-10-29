@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { fetchBeers, addBeerToWishlist } from '../../actions/beer_actions';
 import BeersIndex from './beers_index';
-import { beersSelector } from '../../util/selectors';
+import { entitiesSelector } from '../../util/selectors';
 
 const mapStateToProps = (state) => {
   return {
-    beers: beersSelector(state.entities.beers, state.orderedIds)
+    beers: entitiesSelector(state.entities.beers, state.orderedIds)
   };
 };
 

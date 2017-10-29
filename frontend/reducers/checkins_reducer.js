@@ -1,5 +1,6 @@
 import { RECEIVE_ALL_CHECKINS, RECEIVE_CHECKIN } from '../actions/checkin_actions';
 import { RECEIVE_BEER } from '../actions/beer_actions';
+import { RECEIVE_COMMENT } from '../actions/comment_actions';
 
 const CheckinReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -10,6 +11,10 @@ const CheckinReducer = (state = {}, action) => {
       return Object.assign({}, state, { [action.checkin.id]: action.checkin });
     case RECEIVE_BEER:
       return Object.assign({}, state, action.checkins );
+    case RECEIVE_COMMENT:
+      const checkin = Object.assign({}, state[action.comment.checkinId]);
+      checkin.commentIds = checkin.commentIds.concat(action.comment.id);
+      return Object.assign({}, state, { [action.comment.checkinId]: checkin});
     default:
       return state;
   }

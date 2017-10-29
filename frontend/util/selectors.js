@@ -1,3 +1,3 @@
-export const beersSelector = (beers, orderedIds) => {
-  return orderedIds.map(id => beers[id]);
+export const entitiesSelector = (entity, ids) => {
+  return ids.map(id => entity[id]);
 };

@@ -30,13 +30,11 @@ class CheckinShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchCheckin(this.props.match.params.checkinId);
-    this.props.fetchComments(this.props.match.params.checkinId);
   }
 
   componentWillReceiveProps(newProps) {
     if(this.props.location !== newProps.location) {
       this.props.fetchCheckin(newProps.match.params.checkinId);
-      this.props.fetchComments(newProps.match.params.checkinId);
     }
   }
 
@@ -68,7 +66,7 @@ class CheckinShow extends React.Component {
           </section>
           <CheckinComments comments={this.props.comments} />
           <form onSubmit={this.handleSubmit} className="comment-form">
-            <textarea maxlength='140' value={this.state.body} onChange={this.handleChange} placeholder="Leave a comment..." />
+            <textarea maxLength='140' value={this.state.body} onChange={this.handleChange} placeholder="Leave a comment..." />
             <p>{this.state.body.length}/140</p>
             <button>Post</button>
           </form>

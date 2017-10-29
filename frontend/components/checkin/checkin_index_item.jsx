@@ -7,7 +7,7 @@ const CheckinIndexItem = ({checkin}) => {
   return (
     <li className="checkin-index-item">
       <img src={checkin.userImage}/>
-      <div className="beer-index-item-text">
+      <div>
         <h2 className="checkin-text"><Link className="checkin-link" to={`/users/${checkin.usernameId}`}>{checkin.username}
         </Link> is drinking {_aOrAn(checkin.beer)} <Link className="checkin-link" to={`/beers/${checkin.beerId}`}>{checkin.beer}
           </Link> from <Link className="checkin-link" to={`/brewery/${checkin.breweryId}`}>{checkin.brewery}</Link>

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { fetchSidebarBeers } from '../../actions/beer_actions';
 import Sidebar from './sidebar.jsx';
-import { beersSelector } from '../../util/selectors';
+import { entitiesSelector } from '../../util/selectors';
 
 const mapStateToProps = (state) => {
   return {
-    beers: beersSelector(state.sidebarItems.beers, state.sidebarItems.orderedIds)
+    beers: entitiesSelector(state.sidebarItems.beers, state.sidebarItems.orderedIds)
   };
 };
 

@@ -13,21 +13,19 @@ import CheckinShow from './checkin/checkin_show_container.jsx';
 import Header from './header';
 
 const App = () => (
-  <div>
+  <div className="wrapper">
     <ProtectedRoute path="/" component={Header} />
-    <div className="wrapper">
-      <Switch>
-        <ProtectedRoute path="/users/:userId" component={Profile} />
-        <ProtectedRoute exact path="/beers/new" component={BeerForm} />
-        <ProtectedRoute path="/beers/:beerId/edit" component={BeerForm} />
-        <ProtectedRoute path="/beers/:beerId/checkin" component={CheckinForm} />
-        <ProtectedRoute path="/beers/:beerId" component={BeerShow} />
-        <ProtectedRoute path="/checkins/:checkinId" component={CheckinShow} />
-        <ProtectedRoute exact path="/beers" component={BeerIndex} />
-        <ProtectedRoute exact path="/bar" component={Bar} />
-        <AuthRoute path="/" component={SplashPage} />
-      </Switch>
-    </div>
+    <Switch>
+      <ProtectedRoute path="/users/:userId" component={Profile} />
+      <ProtectedRoute exact path="/beers/new" component={BeerForm} />
+      <ProtectedRoute path="/beers/:beerId/edit" component={BeerForm} />
+      <ProtectedRoute path="/beers/:beerId/checkin" component={CheckinForm} />
+      <ProtectedRoute path="/beers/:beerId" component={BeerShow} />
+      <ProtectedRoute path="/checkins/:checkinId" component={CheckinShow} />
+      <ProtectedRoute exact path="/beers" component={BeerIndex} />
+      <ProtectedRoute exact path="/bar" component={Bar} />
+      <AuthRoute path="/" component={SplashPage} />
+    </Switch>
   </div>
 );
 

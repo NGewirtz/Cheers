@@ -11,10 +11,11 @@ export const receiveCheckins = checkins => {
   };
 };
 
-export const receiveCheckin = checkin => {
+export const receiveCheckin = ({ checkin, comments }) => {
   return {
     type: RECEIVE_CHECKIN,
-    checkin
+    checkin,
+    comments
   };
 };
 

@@ -60,7 +60,7 @@ class BeerForm extends React.Component {
   }
 
   render() {
-    if (!this.props.beer) {
+    if (!this.props.beer || !this.state) {
       return <div></div>;
     }else {
       const breweries = this.props.breweries.map(brewery => (
@@ -83,7 +83,9 @@ class BeerForm extends React.Component {
               </select>
             </div>
           </div>
-          <input type="file" onChange={this.handleImageUpload} className="add-image"></input>
+          <label htmlFor="file" className="add-image">Add An Image
+            <input id="file" type="file" onChange={this.handleImageUpload} className="add-image"></input>
+          </label>
           <div>
             <input className="one-third-form" onChange={this.handleChange('abv')}
               value={this.state.abv} placeholder="Abv"/>
