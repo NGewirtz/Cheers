@@ -524,6 +524,9 @@ aside h2 {
 .small {
   font-size: 14px;
   margin-top: 10px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 .checkin-text {
