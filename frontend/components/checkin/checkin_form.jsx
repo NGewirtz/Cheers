@@ -15,21 +15,29 @@ class CheckinForm extends React.Component {
     if (this.props.match.path !== "/checkins/:checkinId/edit") {
       this.props.fetchBeer(this.props.match.params.beerId);
     }else {
-      this.props.fetchCheckin(this.props.match.params.checkinId).then(this.props.fetchBeer(this.props.form.beerId));
-    }
+      this.props.fetchCheckin(this.props.match.params.checkinId).then(checkin => {
+        this.props.fetchBeer(checkin.checkin.beerId).then(beer => {
+          this.setState({body: checkin.checkin.body, rating: checkin.checkin.rating, beerId: beer.beer.id, id: checkin.checkin.id });
+        });
+      }
+    );}
   }
 
   componentWillReceiveProps(newProps) {
     if(this.props.location !== newProps.location && newProps.location !== "/checkins/:checkinId/edit") {
       this.props.fetchBeer(newProps.match.params.beerId);
     }else if(this.props.location !== newProps.location) {
-      this.props.fetchCheckin(newProps.match.params.checkinId).then(this.props.fetchBeer(this.props.form.beerId));
-    }
+      this.props.fetchCheckin(newProps.match.params.checkinId).then(checkin => {
+        this.props.fetchBeer(checkin.checkin.beerId).then(beer => {
+          this.setState({body: checkin.checkin.body, rating: checkin.checkin.rating, beerId: beer.beer.id, id: checkin.checkin.id });
+        });
+      }
+    );}
   }
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push('/bar'));
+    this.props.action(this.state).then((checkin) => this.props.history.push(`/checkins/${checkin.checkin.id}`));
   }
 
   handleChange(key){
@@ -39,7 +47,7 @@ class CheckinForm extends React.Component {
   }
 
   render() {
-    if(!this.props.beer) {
+    if(!this.props.beer || !this.state) {
       return <div></div>;
     }else {
       const errors = this.props.errors.map((error, idx) => (

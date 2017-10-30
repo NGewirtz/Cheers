@@ -21,7 +21,7 @@ const mapStateToProps = (state, ownProps) => {
     };
   }else {
     form = state.entities.checkins[ownProps.match.params.checkinId]; //form is entire checkin
-    beer = state.entities.beers[form.beerId];
+    beer = form ? state.entities.beers[form.beerId] : null;
     return {
       form,
       beer,
