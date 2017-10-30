@@ -3,8 +3,8 @@ import { cheersSelector } from '../../util/selectors';
 
 const CheckinCheers = ({cheersCheckin, deleteCheersCheckin, cheerUserIds, checkinId, cheered, users}) => {
   const cheersImgs = cheerUserIds.map(id => {
-    if(id) {
-      return <img className="user-header-img" src={users[id].image}
+    if(users[id]) {
+      return <img className="user-header-img" src={ users[id].image }
         title={users[id].username} key={id}/>;
     }
   });
