@@ -34,7 +34,7 @@ export const createBeer = beer => {
 export const updateBeer = beer => {
   return $.ajax({
     method: 'patch',
-    url: `/api/beers/${beer.id}`,
+    url: `/api/beers/${beer.get("beer[id]")}`,
     processData: false,
     contentType: false,
     dataType: 'json',
@@ -53,5 +53,12 @@ export const addBeerToWishlist = beerId => {
   return $.ajax({
     method: 'post',
     url: `/api/beers/${beerId}/wishlist_items`
+  });
+};
+
+export const removeBeerFromWishlist = beerId => {
+  return $.ajax({
+    method: 'delete',
+    url: `/api/wishlist_items/${beerId}`
   });
 };

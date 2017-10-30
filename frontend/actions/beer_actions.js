@@ -63,6 +63,11 @@ export const addBeerToWishlist = id => dispatch => (
   errors => dispatch(receiveSessionErrors(errors)))
 );
 
+export const removeBeerFromWishlist = id => dispatch => (
+  APIUtil.removeBeerFromWishlist(id).then(beer => dispatch(receiveBeer(beer)),
+  errors => dispatch(receiveSessionErrors(errors)))
+);
+
 export const fetchBreweries = () => dispatch => (
   APIUtil.fetchBreweries().then(breweries => dispatch(receiveBreweries(breweries)))
 );
