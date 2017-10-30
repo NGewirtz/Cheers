@@ -46,7 +46,7 @@ class ProfileForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="user-form">
+      <form onSubmit={this.handleSubmit} className="user-edit-form">
         <img src={this.state.imageUrl || this.props.user.userImg}/>
         <label htmlFor="file" className="add-image">Add An Image
           <input id="file" type="file" onChange={this.handleImageUpload} className="add-image"></input>

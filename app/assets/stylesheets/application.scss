@@ -416,7 +416,7 @@ aside h2 {
   margin: 0 auto;
 }
 
-.beer-form, .checkin-form, .checkin-show-body, .user-form {
+.beer-form, .checkin-form, .checkin-show-body, .user-edit-form {
   background-color: white;
   width: 40%;
   height: 600px;
@@ -763,13 +763,13 @@ input[type="range"] {
   display: block;
 }
 
-.user-form img {
+.user-edit-form img {
   height: 100px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
 
-.user-form input {
+.user-edit-form input {
   margin-top: 30px;
 }
 
