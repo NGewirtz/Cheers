@@ -1,7 +1,7 @@
 class Checkin < ApplicationRecord
   validates :body, :rating, presence: true
   validates :rating, inclusion: 0..5
-  validates :user, uniqueness: { scope:  :beer }
+  validates :user, uniqueness: { scope:  :beer, message: "can only checkin a beer once" }
   belongs_to :user
   belongs_to :beer
   has_many :comments
