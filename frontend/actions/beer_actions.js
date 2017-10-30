@@ -1,5 +1,6 @@
 import * as APIUtil from '../util/beer_api_util';
 import { receiveSessionErrors } from './session_actions';
+import { receiveUser } from './user_actions';
 
 export const RECEIVE_ALL_BEERS = "RECEIVE_ALL_BEERS";
 export const RECEIVE_BEER = "RECEIVE_BEER";
@@ -59,12 +60,12 @@ export const updateBeer = beer => dispatch => (
 );
 
 export const addBeerToWishlist = id => dispatch => (
-  APIUtil.addBeerToWishlist(id).then(beer => dispatch(receiveBeer(beer)),
+  APIUtil.addBeerToWishlist(id).then(user => dispatch(receiveUser(user)),
   errors => dispatch(receiveSessionErrors(errors)))
 );
 
 export const removeBeerFromWishlist = id => dispatch => (
-  APIUtil.removeBeerFromWishlist(id).then(beer => dispatch(receiveBeer(beer)),
+  APIUtil.removeBeerFromWishlist(id).then(user => dispatch(receiveUser(user)),
   errors => dispatch(receiveSessionErrors(errors)))
 );
 

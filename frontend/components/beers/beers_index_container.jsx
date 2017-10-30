@@ -5,8 +5,11 @@ import BeersIndex from './beers_index';
 import { entitiesSelector } from '../../util/selectors';
 
 const mapStateToProps = (state) => {
+  const wishlistBeers = state.entities.users[state.session.id] ?
+    state.entities.users[state.session.id].wishlistBeers : [];
   return {
-    beers: entitiesSelector(state.entities.beers, state.orderedIds)
+    beers: entitiesSelector(state.entities.beers, state.orderedIds),
+    wishlistBeers
   };
 };
 

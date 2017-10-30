@@ -10,25 +10,32 @@ class BeerIndex extends React.Component {
   }
 
   render() {
-    const beers = this.props.beers.map(beer => (
-      <BeerIndexItem beer={beer}
-        addBeerToWishlist={this.props.addBeerToWishlist} key={beer.id} />
-    ));
-    return (
-      <div>
-        <section className="beers-top">
-          <Link to='/beers/new'><button className="add-button"
-            title="Add A Beer">+</button></Link>
-          <h1>Top Rated Beers</h1>
-        </section>
-        <main>
-          <ul className="beers-index-ul">
-            {beers}
-          </ul>
-          <SidebarContainer />
-        </main>
-      </div>
-    );
+    if(!this.props.wishlistBeers) {
+      return <div></div>;
+    }else{
+      const beers = this.props.beers.map(beer => (
+        <BeerIndexItem beer={beer}
+          removeBeerFromWishlist={this.props.removeBeerFromWishlist}
+          addBeerToWishlist={this.props.addBeerToWishlist}
+          key={beer.id}
+          wishlistBeers={this.props.wishlistBeers} />
+      ));
+      return (
+        <div>
+          <section className="beers-top">
+            <Link to='/beers/new'><button className="add-button"
+              title="Add A Beer">+</button></Link>
+            <h1>Top Rated Beers</h1>
+          </section>
+          <main>
+            <ul className="beers-index-ul">
+              {beers}
+            </ul>
+            <SidebarContainer />
+          </main>
+        </div>
+      );
+    }
   }
 }
 

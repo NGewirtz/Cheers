@@ -36,7 +36,8 @@ class Api::BeersController < ApplicationController
   def wishlist_create
     WishlistItem.create(user_id: current_user.id, beer_id: params[:id])
     @beer = Beer.find(params[:id])
-    render "api/beers/show"
+    @user = current_user
+    render "api/users/show"
   end
 
   private

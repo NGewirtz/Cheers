@@ -5,4 +5,9 @@ json.beers do
     end
   end
 end
+
 json.orderedIds @beers.map(&:id)
+
+json.user do
+  json.partial! 'api/users/user', user: current_user
+end
