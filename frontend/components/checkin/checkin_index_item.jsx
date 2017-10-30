@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { _dateAndTime, _aOrAn } from '../../util/format_util';
 import Rating from '../rating';
 
-const CheckinIndexItem = ({checkin, profile}) => {
+const CheckinIndexItem = ({checkin, profile, editable}) => {
   return (
     <li className="checkin-index-item">
       <img src={checkin.userImage}/>
@@ -17,7 +17,7 @@ const CheckinIndexItem = ({checkin, profile}) => {
         </div>
         <p className="small">{ _dateAndTime(checkin.updated_at)}
           <Link className="checkin-link small" to={`/checkins/${checkin.id}`}>View Detailed Checkin Here</Link>
-          {profile && <Link className="checkin-link small" to={`/checkins/${checkin.id}/edit`}>Edit</Link>}
+          {editable && <Link className="checkin-link small" to={`/checkins/${checkin.id}/edit`}>Edit</Link>}
         </p>
       </div>
       <img src={checkin.beerImage}/>

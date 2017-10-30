@@ -19,7 +19,7 @@ class Profile extends React.Component {
     }else {
       const checkins = this.props.checkins.map(checkin => {
         if (checkin) {
-          return <CheckinIndexItem profile={true} checkin={checkin} key={checkin.id}/>;
+          return <CheckinIndexItem editable={this.props.editable} checkin={checkin} key={checkin.id}/>;
         }
       });
       const user = this.props.user;
