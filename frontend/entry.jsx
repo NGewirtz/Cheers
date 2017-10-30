@@ -9,7 +9,7 @@ import { fetchBeer } from './actions/beer_actions';
 const Test = () => <h1>TEST</h1>;
 
 document.addEventListener("DOMContentLoaded", () => {
-  let store;
+  let store, id;
   if (window.currentUser) {
     const preloadedState = { session: {
       currentUser: window.currentUser.username,
@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   store = configureStore(preloadedState);
+  id = window.currentUser.id;
   delete window.currentUser;
   }else {
     store = configureStore();
@@ -26,5 +27,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.logout = logout;
   window.store = store;
   const root = document.getElementById('root');
-  ReactDOM.render(<Root store={store} />, root);
+  ReactDOM.render(<Root store={store} id={id}/>, root);
 });

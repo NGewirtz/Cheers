@@ -204,7 +204,7 @@ input[type="file"] {
   outline: 0;
 }
 
-.beer-form input, .beer-form textarea, select, .checkin-form textarea {
+.beer-form input, .beer-form textarea, select, .checkin-form textarea, .user-form input {
   border: 3px solid #f3f2ea;
 }
 
@@ -415,7 +415,7 @@ aside h2 {
   margin: 0 auto;
 }
 
-.beer-form, .checkin-form, .checkin-show-body {
+.beer-form, .checkin-form, .checkin-show-body, .user-form {
   background-color: white;
   width: 40%;
   height: 600px;
@@ -423,7 +423,7 @@ aside h2 {
   margin-bottom: 50px;
 }
 
-.beer-form img {
+.beer-form img, .user-form img {
   width: 20%;
   height: 100%;
 }
@@ -760,6 +760,16 @@ input[type="range"] {
 
 .profile-ul {
   display: block;
+}
+
+.user-form img {
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.user-form input {
+  margin-top: 30px;
 }
 
 // -----https://codepen.io/Bluetidepro/pen/GkpEa A PEN BY Zach Reed---
