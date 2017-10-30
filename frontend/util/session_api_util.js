@@ -6,6 +6,14 @@ export const login = user => (
   })
 );
 
+export const guestLogin = () => (
+  $.ajax({
+    method: 'POST',
+    url: '/api/session',
+    data: { user : { username: 'guest', password: 'starwars' } }
+  })
+);
+
 export const signup = user => (
   $.ajax({
     method: 'POST',

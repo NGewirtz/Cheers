@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
     resources :breweries, only: [:index, :show]
     resources :checkins, only: [:index, :show] do
-      resources :comments, only: [:index]
+      resources :comments, only: [:index, :create]
       resources :cheers, only: [:index, :create]
     end
     resources :cheers, only: [:destroy]

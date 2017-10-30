@@ -124,10 +124,15 @@ button {
   transition: 1s;
 }
 
+.splash button.guest:hover {
+  background-color: green;
+  transition: 1s;
+}
+
 .splash header {
   display: flex;
-  justify-content: flex-end;
-  margin: 20px;
+  justify-content: space-between;
+  margin: 30px;
   margin-top: 0;
   padding-top: 20px;
 }
@@ -697,6 +702,64 @@ input[type="range"] {
 
 .green:hover {
   background-color: green;
+}
+
+.profile-header {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 175px;
+  padding-left: 50px;
+  padding-bottom: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background: image-url('splash3.jpg');
+  background-size: cover;
+}
+
+.profile-header img {
+  height: 150px;
+  width: 150px;
+  border-radius: 200px;
+  margin-right: 50px;
+}
+
+.profile-header h2 {
+  color:white;
+  font-size: 40px;
+}
+
+.profile-header ul {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.profile-header li {
+  color: white;
+  font-size: 18px;
+}
+
+.profile-header div {
+  margin-top: 50px;
+}
+
+.profile-ul > h2 {
+  font-size: 24px;
+  margin-left: 5%;
+  width: 80%;
+  background-color: white;
+  padding: 20px;
+  border-bottom: 1px solid #f3f2ea;
+  display: inline-block;
+}
+
+.profile-header aside {
+  display: inline-block;
+}
+
+.profile-ul {
+  display: block;
 }
 
 // -----https://codepen.io/Bluetidepro/pen/GkpEa A PEN BY Zach Reed---

@@ -17,7 +17,7 @@ const CheckinComments = ({comments}) => {
     }
   });
   if(commentItems.length === 0) {
-    commentItems.push(<li>Be The First To Leave A Comment Below</li>);
+    commentItems.push(<li key='999'>Be The First To Leave A Comment Below</li>);
   }
   return (
     <section className="comments">

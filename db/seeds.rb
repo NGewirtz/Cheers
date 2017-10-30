@@ -10,6 +10,7 @@
 User.destroy_all
 user1 = User.create(username: 'user', password: '123456')
 user2 = User.create(username: 'user2', password: 'starwars')
+guest = User.create(username: 'guest', password: 'starwars')
 
 Brewery.destroy_all
 brew1 = Brewery.create!(name: 'ipa brewery', location: 'NYC', description: "We brew delicious ipas")

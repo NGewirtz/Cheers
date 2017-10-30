@@ -2,13 +2,20 @@ import React from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import SessionFormContainer from './session/session_form_container';
+import { guestLogin } from '../actions/session_actions';
+import { connect } from 'react-redux';
 
-const SplashPage = () => {
+const SplashPage = (props) => {
   return (
     <div className="splash">
       <header>
-        <button><Link to='/login'>Login</Link></button>
-        <button><Link to='/signup'>Signup</Link></button>
+        <div>
+          <button className="guest" onClick={props.guestLogin}>Guest</button>
+        </div>
+        <div>
+          <button><Link to='/login'>Login</Link></button>
+          <button><Link to='/signup'>Signup</Link></button>  
+        </div>
       </header>
       <section>
         <h1 className="home-logo">CHEERS!</h1>
@@ -20,4 +27,10 @@ const SplashPage = () => {
   );
 };
 
-export default SplashPage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    guestLogin: () => dispatch(guestLogin())
+  };
+};
+
+export default connect(null, mapDispatchToProps)(SplashPage);

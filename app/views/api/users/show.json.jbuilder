@@ -1,5 +1,7 @@
-json.partial! 'api/users/user', user: @user
-json.checkinIds @user.checkins.ids
+json.user do
+  json.partial! 'api/users/user', user: @user
+  json.checkinIds @user.checkins.ids
+end
 
 json.checkins do
   @user.checkins.each do |checkin|

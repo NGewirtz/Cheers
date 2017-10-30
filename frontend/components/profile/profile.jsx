@@ -17,26 +17,32 @@ class Profile extends React.Component {
     if(!this.props.user) {
       return <div></div>;
     }else {
-      const checkins = this.props.user.checkinIds.map(checkinId => {
-        if (this.props.user.checkins) {
-          return <CheckinIndexItem checkin={this.props.user.checkins[checkinId]} key={checkinId}/>
+      const checkins = this.props.checkins.map(checkin => {
+        if (checkin) {
+          return <CheckinIndexItem checkin={checkin} key={checkin.id}/>;
         }
       });
+      const user = this.props.user;
       return (
         <div>
-          <header>
-            <img src={this.props.user.image}/>
-            <h2>{this.props.user.username}</h2>
-            <ul>
-              <li>Checkins 5</li>
-              <li>Comments 11</li>
-              <li>Cheers 23</li>
-            </ul>
+          <header className="profile-header">
+            <img src={user.image}/>
+            <div>
+              <h2>{user.username}</h2>
+              <ul>
+                <li> {checkins.length} Checkins  |  </li>
+                <li> {user.commentCount} Comments  |  </li>
+                <li> {user.cheers} Cheers!  </li>
+              </ul>
+            </div>
           </header>
-          <ul>
-            {checkins}
-          </ul>
-          <Sidebar />
+          <main>
+            <ul className='checkin-index-ul profile-ul'>
+              <h2>Your Recent Activity</h2>
+              {checkins}
+            </ul>
+            <Sidebar />
+          </main>
         </div>
       );
     }

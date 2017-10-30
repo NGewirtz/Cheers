@@ -32,6 +32,12 @@ export const login = user => dispatch => (
 
 export const logout = () => dispatch => (
   APIUtil.logout().then(user => (
-    dispatch(receiveCurrentUser({username: null}))
+    dispatch(receiveCurrentUser({ user: {username: null } }))
+  ), errors => dispatch(receiveSessionErrors(errors)))
+);
+
+export const guestLogin = () => dispatch => (
+  APIUtil.guestLogin().then(user => (
+    dispatch(receiveCurrentUser(user))
   ), errors => dispatch(receiveSessionErrors(errors)))
 );

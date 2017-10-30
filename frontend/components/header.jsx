@@ -15,8 +15,8 @@ const Header = (props) => (
       <li>
         <img className="user-header-img" src={props.userImg} />
         <ul className="user-options">
-          <li><Link to="/users/:id">Profile</Link></li>
-          <li><Link to="/users/:id/edit">Edit Profile</Link></li>
+          <li><Link to={`/users/${props.id}`}>Profile</Link></li>
+          <li><Link to={`/users/${props.id}/edit`}>Edit Profile</Link></li>
           <li onClick={props.logout}>Logout</li>
         </ul>
       </li>
@@ -28,7 +28,8 @@ const Header = (props) => (
 const mapStateToProps = (state) => {
   return {
     username: state.session.username,
-    userImg: state.session.userImg
+    userImg: state.session.userImg,
+    id: state.session.id
   };
 };
 
