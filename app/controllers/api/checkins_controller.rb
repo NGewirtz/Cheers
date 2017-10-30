@@ -14,9 +14,23 @@ class Api::CheckinsController < ApplicationController
     end
   end
 
+  def edit
+    @checkin = Checkin.find(params[:id])
+    render 'api/checkins/show'
+  end
+
   def show
     @checkin = Checkin.includes(:cheers).find(params[:id])
     render 'api/checkins/show'
+  end
+
+  def update
+    @checkin = Checkin.find(params[:id])
+    if @checkin.update(checkin_params)
+      render 'api/checkins/show'
+    else
+      render json: @checkin.errors.full_messages, status: 422
+    end
   end
 
   def cheers_create

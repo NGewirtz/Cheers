@@ -33,6 +33,11 @@ export const createCheckin = checkin => dispatch => (
   errors => dispatch(receiveSessionErrors(errors)))
 );
 
+export const updateCheckin = checkin => dispatch => (
+  APIUtil.updateCheckin(checkin).then(checkin => dispatch(receiveCheckin(checkin)),
+  errors => dispatch(receiveSessionErrors(errors)))
+);
+
 export const cheersCheckin = id => dispatch => (
   APIUtil.cheersCheckin(id).then(checkin => dispatch(receiveCheckin(checkin)),
   errors => dispatch(receiveSessionErrors(errors)))

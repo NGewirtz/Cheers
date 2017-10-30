@@ -18,11 +18,12 @@ const App = ({id}) => (
     <ProtectedRoute path="/" component={Header} />
     <Switch>
       <ProtectedRoute exact path={`/users/${id}/edit`} component={ProfileForm} />
-      <ProtectedRoute path="/users/:userId" component={Profile} />
+      <ProtectedRoute exact path="/users/:userId" component={Profile} />
       <ProtectedRoute exact path="/beers/new" component={BeerForm} />
       <ProtectedRoute path="/beers/:beerId/edit" component={BeerForm} />
       <ProtectedRoute path="/beers/:beerId/checkin" component={CheckinForm} />
       <ProtectedRoute path="/beers/:beerId" component={BeerShow} />
+      <ProtectedRoute path="/checkins/:checkinId/edit" component={CheckinForm} />
       <ProtectedRoute path="/checkins/:checkinId" component={CheckinShow} />
       <ProtectedRoute exact path="/beers" component={BeerIndex} />
       <ProtectedRoute exact path="/bar" component={Bar} />

@@ -32,7 +32,7 @@ export const login = user => dispatch => (
 
 export const logout = () => dispatch => (
   APIUtil.logout().then(user => (
-    dispatch(receiveCurrentUser({ user: {username: null } }))
+    dispatch(receiveCurrentUser({ user: { username: null, id: null, userImg: null } }))
   ), errors => dispatch(receiveSessionErrors(errors)))
 );
 

@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import { updateUser } from '../../actions/user_actions';
 import ProfileForm from './profile_form';
+import { withRouter } from 'react-router';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     user: state.session
   };
@@ -14,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProfileForm));

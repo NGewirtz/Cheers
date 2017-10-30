@@ -5,29 +5,31 @@ class CheckinForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      body: '',
-      rating: 5,
-      beerId: this.props.match.params.beerId
-    };
+    this.state = this.props.form;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.props.clearErrors();
-    this.props.fetchBeer(this.props.match.params.beerId);
+    if (this.props.match.path !== "/checkins/:checkinId/edit") {
+      this.props.fetchBeer(this.props.match.params.beerId);
+    }else {
+      this.props.fetchCheckin(this.props.match.params.checkinId).then(this.props.fetchBeer(this.props.form.beerId));
+    }
   }
 
   componentWillReceiveProps(newProps) {
-    if(this.props.location !== newProps.location) {
+    if(this.props.location !== newProps.location && newProps.location !== "/checkins/:checkinId/edit") {
       this.props.fetchBeer(newProps.match.params.beerId);
+    }else if(this.props.location !== newProps.location) {
+      this.props.fetchCheckin(newProps.match.params.checkinId).then(this.props.fetchBeer(this.props.form.beerId));
     }
   }
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.createCheckin(this.state).then(() => this.props.history.push('/bar'));
+    this.props.action(this.state).then(() => this.props.history.push('/bar'));
   }
 
   handleChange(key){
@@ -46,12 +48,12 @@ class CheckinForm extends React.Component {
       return (
         <form onSubmit={this.handleSubmit} className='checkin-form'>
           <SidebarItem beer={this.props.beer} />
-          <textarea onChange={this.handleChange("body")} placeholder="Describe this beer"/>
+          <textarea value={this.state.body} onChange={this.handleChange("body")} placeholder="Describe this beer"/>
           <div className="range-container">
-            <input onChange={this.handleChange("rating")} type="range" min="0" max="5"/>
+            <input value={this.state.rating} onChange={this.handleChange("rating")} type="range" min="0" max="5"/>
             <span>Rating: {this.state.rating} &#9734; </span>
           </div>
-          <input type='submit' value='Add Checkin'/>
+          <input type='submit' value={this.props.formType}/>
           <ul className='checkin-form-errors'>
             {errors}
           </ul>
