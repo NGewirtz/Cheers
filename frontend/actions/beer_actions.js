@@ -14,11 +14,12 @@ export const receiveBeers = beers => {
   };
 };
 
-export const receiveBeer = ({ beer, checkins }) => {
+export const receiveBeer = ({ beer, checkins, user }) => {
   return {
     type: RECEIVE_BEER,
     beer,
-    checkins
+    checkins,
+    user
   };
 };
 

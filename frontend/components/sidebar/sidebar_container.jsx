@@ -5,7 +5,8 @@ import { entitiesSelector } from '../../util/selectors';
 
 const mapStateToProps = (state) => {
   return {
-    beers: entitiesSelector(state.sidebarItems.beers, state.sidebarItems.orderedIds)
+    beers: entitiesSelector(state.sidebarItems.beers, state.sidebarItems.orderedIds),
+    header: 'Trending Beers'
   };
 };
 

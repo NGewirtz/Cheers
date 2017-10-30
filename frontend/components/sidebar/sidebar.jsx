@@ -7,12 +7,14 @@ class Sidebar extends React.Component {
     this.props.fetchSidebarBeers({"sidebar": true});
   }
   render() {
-    const sidebarItems = this.props.beers.map(beer => (
-      <SidebarItem beer={beer} key={beer.id} />
-    ));
+    const sidebarItems = this.props.beers.map(beer => {
+      if(beer) {
+        return <SidebarItem beer={beer} key={beer.id} />;
+      }
+    });
     return (
       <aside>
-        <h2>Trending Beers</h2>
+        <h2>{this.props.header}</h2>
         <hr />
         <ul>
           {sidebarItems}

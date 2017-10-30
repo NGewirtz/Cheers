@@ -24,10 +24,25 @@ class BeerShow extends React.Component {
           return <CheckinIndexItem checkin={checkin} key={checkin.id}/>;
         }
       });
+      let className, action, title, symbol;
+      if(this.props.wishlistBeers.includes(this.props.beer.id)){
+        className = "add-button red";
+        action = this.props.removeBeerFromWishlist;
+        title = "Remove From Wishlist";
+        symbol = "-";
+      }else{
+        className = "add-button green";
+        action = this.props.addBeerToWishlist;
+        title = "Add To Wishlist";
+        symbol = "+";
+      }
       return (
         <div className="beer-show-page top">
           <div>
-            <BeerShowItem beer={this.props.beer} />
+            <BeerShowItem beer={this.props.beer}
+              action={action}
+              className={className}
+              symbol={symbol} />
             <ul className="beer-show-checkins">
               {checkins}
             </ul>

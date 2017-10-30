@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BeerInfoList from './beer_info_list';
 
-const BeerShowItem = ({beer, checkins}) => {
+const BeerShowItem = ({beer, className, action, symbol, title}) => {
   if(!beer){
     return <div></div>;
   }else{
@@ -20,9 +20,15 @@ const BeerShowItem = ({beer, checkins}) => {
         <p>{beer.description}</p>
         <nav>
           <Link to={`/beers/${beer.id}/checkin`}>
-            <button className="add-button" title="Checkin Beer">&#10004;</button>
+            <button className="add-button"
+              title="Checkin Beer">&#10004;
+            </button>
           </Link>
-          <button className="add-button" title="Add To Wish List">+</button>
+          <button onClick={() => action(beer.id)}
+            className={className}
+            title={title}>
+            {symbol}
+          </button>
         </nav>
       </li>
     );

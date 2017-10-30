@@ -1,6 +1,6 @@
 import React from 'react';
 import CheckinIndexItem from '../checkin/checkin_index_item';
-import Sidebar from '../sidebar/sidebar_container';
+import Wishlist from './wishlist_container';
 
 class Profile extends React.Component {
   componentDidMount() {
@@ -41,7 +41,7 @@ class Profile extends React.Component {
               <h2>Your Recent Activity</h2>
               {checkins}
             </ul>
-            <Sidebar />
+            <Wishlist />
           </main>
         </div>
       );

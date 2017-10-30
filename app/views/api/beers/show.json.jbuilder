@@ -9,3 +9,7 @@ json.checkins do
     end
   end
 end
+
+json.user do
+  json.partial! 'api/users/user', user: current_user
+end
