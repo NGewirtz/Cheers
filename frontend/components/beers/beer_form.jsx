@@ -66,9 +66,15 @@ class BeerForm extends React.Component {
       const breweries = this.props.breweries.map(brewery => (
         <option key={brewery.id} value={brewery.id}>{brewery.name}</option>
       ));
-      const errors = this.props.errors.map((error, idx) => (
-        <li key={idx}>{error}</li>
-      ));
+      let errors;
+      if (Array.isArray(this.props.errors)) {
+        errors = this.props.errors.map((error, idx) => (
+          <li key={idx}>{error}</li>
+        ));
+      }else {
+        console.log(errors);
+        errors = [];
+      }
       return (
         <form className="beer-form" onSubmit={this.handleSubmit}>
           <div>
