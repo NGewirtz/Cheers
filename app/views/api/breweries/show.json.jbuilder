@@ -15,7 +15,7 @@ json.beers do
 end
 
 json.checkins do
-  @brewery.checkins.each do |checkin|
+  @brewery.checkins[0...15].each do |checkin|
     json.set! checkin.id do
       json.partial! 'api/checkins/checkin', checkin: checkin
     end

@@ -4,7 +4,7 @@ json.user do
 end
 
 json.checkins do
-  @user.checkins[0..20].each do |checkin|
+  @user.checkins[0...15].each do |checkin|
     json.set! checkin.id do
       json.partial! 'api/checkins/checkin', checkin: checkin
     end
