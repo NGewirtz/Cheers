@@ -62,7 +62,7 @@ end
 
 Beer.destroy_all
 beers = []
-200.times do
+100.times do
   beer = Beer.new(brewery_id: breweries.sample.id, name: Faker::Beer.name, beer_type: Faker::Beer.style, description: lorems.sample, image: File.open(beer_defaults))
   if beer.save
     beers << beer
@@ -72,7 +72,7 @@ end
 
 Checkin.destroy_all
 checkins = []
-1000.times do
+400.times do
   checkin = Checkin.new(beer_id: beers.sample.id, user_id: users.sample.id, body: Faker::Coffee.notes, rating: (0..5).to_a.sample)
   if checkin.save
     checkins << checkin
