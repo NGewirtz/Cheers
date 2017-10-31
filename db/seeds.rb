@@ -43,7 +43,7 @@ end
 User.destroy_all
 users = []
 10.times do |x|
-  image = "app/assets/images/users/user#{x}.jpeg"
+  image = "app/assets/images/users/user#{x+1}.jpeg"
   user = User.create(username: Faker::Name.unique.name, password: 'starwars', image: File.open(image))
   users << user
 end
