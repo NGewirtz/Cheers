@@ -24,6 +24,7 @@ class Profile extends React.Component {
         }
       });
       const user = this.props.user;
+      console.log(user)
       return (
         <div>
           <header className="profile-header">
@@ -31,7 +32,7 @@ class Profile extends React.Component {
             <div>
               <h2>{user.username}</h2>
               <ul>
-                <li> {user.checkinIds.length} Checkins  |  </li>
+                <li> {user.checkinIds && user.checkinIds.length} Checkins  |  </li>
                 <li> {user.commentCount} Comments  |  </li>
                 <li> {user.cheers} Cheers!  </li>
               </ul>
