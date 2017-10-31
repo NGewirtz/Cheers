@@ -3,6 +3,7 @@ import BreweryShowItem from './brewery_show_item';
 import CheckinIndexItem from '../checkin/checkin_index_item';
 import Rating from '../rating';
 import { _date, _decimalNum } from '../../util/format_util';
+import Sidebar from '../sidebar/sidebar';
 
 class BreweryShow extends React.Component {
 
@@ -19,18 +20,24 @@ class BreweryShow extends React.Component {
           return <CheckinIndexItem checkin={checkin} key={checkin.id}/>;
         }
       });
-      const brewery = this.props.brewery
+      const brewery = this.props.brewery;
       return (
-        <div className="brewery-show-div">
-          <BreweryShowItem brewery={brewery}/>
-          <ul>
-            <li id="star-li"><Rating rating={_decimalNum(brewery.rating)} /></li>
-            <li id="star-li-label">({_decimalNum(brewery.rating)})</li>
-            <li>Ratings: {brewery.ratings}</li>
-            <li>Beers: {brewery.beer_count}</li>
-            <li>Added: {_date(brewery.created_at)}</li>
+        <div className="show-wrapper">
+          <div className="brewery-show-div">
+            <BreweryShowItem brewery={brewery}/>
+            <ul>
+              <li id="star-li"><Rating rating={_decimalNum(brewery.rating)} /></li>
+              <li id="star-li-label">({_decimalNum(brewery.rating)})</li>
+              <li>Ratings: {brewery.ratings}</li>
+              <li>Beers: {brewery.beer_count}</li>
+              <li>Added: {_date(brewery.created_at)}</li>
+            </ul>
+            <p>{this.props.brewery.description}</p>
+          </div>
+          <ul className="brewery-show-checkins">
+            {checkins}
           </ul>
-          <p>{this.props.brewery.description}</p>
+          <Sidebar beers={this.props.beers} header="Brews" fetchSidebarBeers={()=> {}}/>
         </div>
       );
     }

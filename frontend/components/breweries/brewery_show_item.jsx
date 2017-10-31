@@ -9,8 +9,8 @@ const BreweryShowItem = ({brewery}) => {
         <h4>{brewery.location}</h4>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default BreweryShowItem;
 

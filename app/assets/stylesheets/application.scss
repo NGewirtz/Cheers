@@ -688,7 +688,7 @@ input[type="range"] {
   margin-top: 50px;
 }
 
-.beer-show-checkins {
+.beer-show-checkins, .brewery-show-checkins {
   background-color: white;
   width: 100%;
   margin-left: 5%;
@@ -780,7 +780,6 @@ input[type="range"] {
   display: flex;
   margin-top: 100px;
   background-color: white;
-  width: 55%;
   padding: 20px;
   height: fit-content;
 }
@@ -790,34 +789,67 @@ input[type="range"] {
   width: 100px;
 }
 
-.brewery-show-item h2 {
+.brewery-show-item h3 {
   width: 100%;
   font-size: 32px;
+  margin-left: 20px;
+  text-transform: capitalize;
+}
+
+.brewery-show-item h4 {
+  margin-left: 20px;
+  font-size: 24px;
 }
 
 .brewery-show-div {
   padding-left: 5%;
   display: flex;
   flex-direction: column;
+  width: 60%;
+  height: fit-content;
 }
 
 .brewery-show-div ul, .brewery-show-div p {
   display: flex;
   flex-direction: row;
   background-color: white;
-  width: 55%;
+
   padding: 20px;
 }
 
 .brewery-show-div ul {
   display: flex;
   flex-direction: row;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding:0;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: auto;
 }
 
-.brewery-show-div ul li {
-  height: 20px;
-  margin: 0;
-  padding: 0;
+.brewery-show-div ul li:last-of-type {
+  border-right: 0;
+}
+
+.show-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+}
+
+.show-wrapper aside {
+  position: absolute;
+  top: 80px;
+  right: 0;
+}
+
+.brewery-show-checkins {
+  width: 60%;
+  margin-left: 5%;
+  margin-top: 20px;
+  box-sizing: border-box;
 }
 
 // -----https://codepen.io/Bluetidepro/pen/GkpEa A PEN BY Zach Reed---

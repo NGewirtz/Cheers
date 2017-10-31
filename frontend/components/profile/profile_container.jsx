@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   const user = state.entities.users[ownProps.match.params.userId] || {};
   checkins = user.checkinIds ?
     entitiesSelector(state.entities.checkins, user.checkinIds) : [];
-  const editable = user.id === state.session.id ? true : false;
+  const editable = user.id === state.session.id;
   return {
     user,
     checkins,

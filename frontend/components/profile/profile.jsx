@@ -38,7 +38,7 @@ class Profile extends React.Component {
           </header>
           <main>
             <ul className='checkin-index-ul profile-ul'>
-              <h2>Your Recent Activity</h2>
+              <h2>Recent Activity</h2>
               {checkins}
             </ul>
             <Wishlist />

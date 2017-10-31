@@ -10,7 +10,7 @@ const CheckinIndexItem = ({checkin, profile, editable}) => {
       <div>
         <h2 className="checkin-text"><Link className="checkin-link" to={`/users/${checkin.usernameId}`}>{checkin.username}
         </Link> is drinking {_aOrAn(checkin.beer)} <Link className="checkin-link" to={`/beers/${checkin.beerId}`}>{checkin.beer}
-          </Link> from <Link className="checkin-link" to={`/brewery/${checkin.breweryId}`}>{checkin.brewery}</Link>
+      </Link> from <Link className="checkin-link" to={`/breweries/${checkin.breweryId}`}>{checkin.brewery}</Link>
         </h2>
         <div className="rating-border-div">
           <Rating rating={checkin.rating} />
