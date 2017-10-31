@@ -129,6 +129,10 @@ button {
   transition: 1s;
 }
 
+.splash button.guest:focus {
+  outline: none;
+}
+
 .splash header {
   display: flex;
   justify-content: space-between;
@@ -308,7 +312,7 @@ li:hover .user-options {
 }
 
 .beer-index-item img {
-  width: 15%;
+  width: 100px;
   height: 100px;
 }
 
@@ -867,6 +871,15 @@ input[type="range"] {
   margin-left: 5%;
   margin-top: 20px;
   box-sizing: border-box;
+}
+
+.comment-delete {
+  cursor: pointer;
+  text-align: right;
+}
+
+.comment-delete:hover {
+  color:#ffcc00;
 }
 
 // -----https://codepen.io/Bluetidepro/pen/GkpEa A PEN BY Zach Reed---

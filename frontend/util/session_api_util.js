@@ -10,7 +10,7 @@ export const guestLogin = () => (
   $.ajax({
     method: 'POST',
     url: '/api/session',
-    data: { user : { username: 'guest', password: 'starwars' } }
+    data: { user : { username: 'Guest', password: 'starwars' } }
   })
 );
 

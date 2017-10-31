@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
     resources :cheers, only: [:destroy]
     resources :wishlist_items, only: [:destroy]
+    resources :comments, only: [:destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -67,7 +67,9 @@ class CheckinShow extends React.Component {
             cheerUserIds={checkin.cheerUserIds || []}
             checkinId={checkin.id}
             cheered={this.props.cheered} />
-          <CheckinComments comments={this.props.comments} />
+          <CheckinComments comments={this.props.comments}
+            userId={this.props.userId}
+            deleteComment={this.props.deleteComment} />
           <form onSubmit={this.handleSubmit} className="comment-form">
             <textarea maxLength='140' value={this.state.body}
               onChange={this.handleChange} placeholder="Leave a comment..." />

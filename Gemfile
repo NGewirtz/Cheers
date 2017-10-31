@@ -30,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'jquery-rails'
 
+gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+
 gem "paperclip", '~> 5.0.0'
 gem 'aws-sdk', '< 3.0'
 gem 'figaro'

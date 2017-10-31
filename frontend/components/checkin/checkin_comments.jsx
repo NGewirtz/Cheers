@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CheckinComments = ({comments}) => {
+const CheckinComments = ({comments, userId, deleteComment}) => {
   const commentItems = comments.map((comment, idx) => {
     if (comment) {
       return (
@@ -12,6 +12,7 @@ const CheckinComments = ({comments}) => {
               {comment.username}
             </Link> said {comment.body}
           </span>
+          {(userId === comment.userId) && <p className="comment-delete" onClick={() => deleteComment(comment.id)}>Delete</p>}
         </li>
       );
     }
