@@ -11,18 +11,19 @@ const Header = (props) => (
       <Link to='/bar' className="header-link">The Bar</Link>
       <Link to='/beers' className="header-link">Top Beers</Link>
     </nav>
-
-    <Search />
-    <ul className="user-header">
-      <li>
-        <img className="user-header-img" src={props.userImg} />
-        <ul className="user-options">
-          <li><Link to={`/users/${props.id}`}>Profile</Link></li>
-          <li><Link to={`/users/${props.id}/edit`}>Edit Profile</Link></li>
-          <li onClick={props.logout}>Logout</li>
-        </ul>
-      </li>
-    </ul>
+    <div className="header-right">
+      <ul className="user-header">
+        <li>
+          <img className="user-header-img" src={props.userImg} />
+          <ul className="user-options">
+            <li><Link to={`/users/${props.id}`}>Profile</Link></li>
+            <li><Link to={`/users/${props.id}/edit`}>Edit Profile</Link></li>
+            <li onClick={props.logout}>Logout</li>
+          </ul>
+        </li>
+      </ul>
+      <Search />
+    </div>
   </header>
 );
 

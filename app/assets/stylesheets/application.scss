@@ -254,6 +254,7 @@ input:focus, textarea:focus, select:focus {
   margin-right: 10%;
   display: flex;
   align-items: center;
+  align-self: center;
 }
 
 .user-header > li {
@@ -885,6 +886,7 @@ input[type="range"] {
 .search-results {
   background-color: white;
   z-index: 3;
+  width: 223px;
 }
 
 .search-results img {
@@ -893,15 +895,26 @@ input[type="range"] {
 }
 
 .search-results h3 {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .search-results h4 {
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .search-results li {
   z-index: 3;
+  margin: 5px;
+  border-bottom: 1px solid #f3f2ea;
+}
+
+.search-div input {
+  border-radius: 7px;
+}
+
+.header-right {
+  display: inherit;
+  margin-right: 150px;
 }
 
 // -----https://codepen.io/Bluetidepro/pen/GkpEa A PEN BY Zach Reed---

@@ -19,8 +19,8 @@ class Search extends React.Component {
       <SidebarItem beer={beer} key={beer.id} />
     ));
     return (
-      <div>
-        <input onChange={this.handleChange} type="text" />
+      <div className="search-div">
+        <input onChange={this.handleChange} type="text" placeholder="Search for a beer"/>
         <ul className="search-results">
           {searchResults}
         </ul>
