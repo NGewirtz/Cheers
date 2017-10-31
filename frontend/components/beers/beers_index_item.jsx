@@ -21,7 +21,7 @@ const BeerIndexItem = ({beer, addBeerToWishlist, removeBeerFromWishlist, wishlis
       <img src={beer.image}/>
       <div className="beer-index-item-text">
         <Link to={`/beers/${beer.id}`}><h3>{beer.name}</h3></Link>
-        <h4>{beer.breweryName}</h4>
+        <Link to={`/breweries/${beer.brewery_id}`}><h4>{beer.breweryName}</h4></Link>
         <h5>{beer.beer_type}</h5>
         <p>{beer.description}</p>
       </div>

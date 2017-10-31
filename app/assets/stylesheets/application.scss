@@ -321,13 +321,30 @@ li:hover .user-options {
   margin-bottom: 10px;
 }
 
-.beer-index-item-text h3 {
+.beer-index-item-text h3, h4 {
   color: #c60;
-  font-size: 22px;
+  text-transform: capitalize;
 }
 
-.beer-index-item-text h3:hover, .sidebar-item h3:hover, .checkin-link:hover, .checkin-show-body h2:hover {
+.beer-index-item-text h3 {
+  font-size: 24px;
+}
+
+.beer-index-item-text h4 {
+  font-size: 16px;
+}
+
+.beer-index-item-text h5 {
+  font-size: 14px;
+}
+
+.beer-index-item-text h3:hover, .sidebar-item h3:hover, .checkin-link:hover, .checkin-show-body h2:hover, .beer-index-item-text h4:hover {
   color: #ffcc00;
+}
+
+.sidebar-item h4 {
+  color:black;
+  font-size: 14px;
 }
 
 .beer-index-item ul, .brewery-show-div ul{
@@ -367,7 +384,7 @@ li:hover .user-options {
 }
 
 .top {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 main {

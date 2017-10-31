@@ -6,7 +6,7 @@ const SidebarItem = ({beer}) => (
     <img src={beer.image}/>
     <div>
       <Link to={`/beers/${beer.id}`}><h3>{beer.name}</h3></Link>
-      <h4>{beer.breweryName}</h4>
+      <Link to={`/breweries/${beer.brewery_id}`}><h4>{beer.breweryName}</h4></Link>
     </div>
   </li>
 );

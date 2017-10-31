@@ -50,7 +50,7 @@ class CheckinShow extends React.Component {
       return <div></div>;
     }else {
       const checkin = this.props.checkin;
-      const beer = { id: checkin.beerId, name: checkin.beer, breweryName: checkin.brewery, image: checkin.beerImage };
+      const beer = { id: checkin.beerId, name: checkin.beer, breweryName: checkin.brewery, image: checkin.beerImage, brewery_id: checkin.breweryId };
       return (
         <article className="checkin-show-body">
           <CheckinShowHeader checkin={checkin} />
