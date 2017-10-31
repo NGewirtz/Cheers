@@ -41,6 +41,13 @@ class Api::BeersController < ApplicationController
     render "api/users/show"
   end
 
+  def search
+    if params[:search].present?
+      @beers = Beer.all.includes(:brewery).where('name ~ ?', params[:search])
+      render 'api/beers/sidebar'
+    end
+  end
+
   private
 
   def beer_params

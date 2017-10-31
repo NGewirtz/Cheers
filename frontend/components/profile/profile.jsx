@@ -24,7 +24,6 @@ class Profile extends React.Component {
         }
       });
       const user = this.props.user;
-      console.log(user)
       return (
         <div>
           <header className="profile-header">
