@@ -72,7 +72,7 @@ end
 
 Checkin.destroy_all
 checkins = []
-50.times do
+1000.times do
   checkin = Checkin.new(beer_id: beers.sample.id, user_id: users.sample.id, body: Faker::Coffee.notes, rating: (0..5).to_a.sample)
   if checkin.save
     checkins << checkin

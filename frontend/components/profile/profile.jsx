@@ -31,7 +31,7 @@ class Profile extends React.Component {
             <div>
               <h2>{user.username}</h2>
               <ul>
-                <li> {checkins.length} Checkins  |  </li>
+                <li> {user.checkinIds.length} Checkins  |  </li>
                 <li> {user.commentCount} Comments  |  </li>
                 <li> {user.cheers} Cheers!  </li>
               </ul>
