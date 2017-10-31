@@ -6,6 +6,7 @@ export const RECEIVE_ALL_BEERS = "RECEIVE_ALL_BEERS";
 export const RECEIVE_BEER = "RECEIVE_BEER";
 export const RECEIVE_ALL_BREWERIES = "RECEIVE_ALL_BREWERIES";
 export const RECEIVE_SIDEBAR_BEERS = "RECEIVE_SIDEBAR_BEERS";
+export const RECEIVE_SEARCH_BEERS = "RECEIVE_SEARCH_BEERS";
 
 export const receiveBeers = beers => {
   return {
@@ -34,6 +35,13 @@ export const receiveSidebarBeers = sidebarItems => {
   return {
     type: RECEIVE_SIDEBAR_BEERS,
     sidebarItems
+  };
+};
+
+export const receiveSearchBeers = beers => {
+  return {
+    type: RECEIVE_SEARCH_BEERS,
+    beers
   };
 };
 
@@ -72,4 +80,8 @@ export const removeBeerFromWishlist = id => dispatch => (
 
 export const fetchBreweries = () => dispatch => (
   APIUtil.fetchBreweries().then(breweries => dispatch(receiveBreweries(breweries)))
+);
+
+export const searchBeers = query => dispatch => (
+  APIUtil.searchBeers(query).then(beers => dispatch(receiveSearchBeers(beers)))
 );

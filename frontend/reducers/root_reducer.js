@@ -5,6 +5,7 @@ import entities from './entities_reducer';
 import sidebarItems from './sidebar_items_reducer';
 import orderedIds from './orderedIds_reducer';
 import checkinIds from './checkinIds_reducer';
+import search from './search_reducer';
 
 const RootReducer = combineReducers({
   session,
@@ -12,7 +13,8 @@ const RootReducer = combineReducers({
   entities,
   sidebarItems,
   orderedIds,
-  checkinIds
+  checkinIds,
+  search
 });
 
 export default RootReducer;

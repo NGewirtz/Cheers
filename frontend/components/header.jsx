@@ -2,6 +2,7 @@ import { logout } from '../actions/session_actions';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import React from 'react';
+import Search from './search';
 
 const Header = (props) => (
   <header className="main-header">
@@ -11,6 +12,7 @@ const Header = (props) => (
       <Link to='/beers' className="header-link">Top Beers</Link>
     </nav>
 
+    <Search />
     <ul className="user-header">
       <li>
         <img className="user-header-img" src={props.userImg} />

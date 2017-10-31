@@ -42,9 +42,9 @@ class Api::BeersController < ApplicationController
   end
 
   def search
-    if params[:search].present?
-      @beers = Beer.all.includes(:brewery).where('name ~ ?', params[:search])
-      render 'api/beers/sidebar'
+    if params[:query].present?
+      @beers = Beer.all.includes(:brewery).where('lower(name) ~ ?', params[:query].downcase)
+      render 'api/beers/search'
     end
   end
 

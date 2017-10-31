@@ -882,6 +882,28 @@ input[type="range"] {
   color:#ffcc00;
 }
 
+.search-results {
+  background-color: white;
+  z-index: 3;
+}
+
+.search-results img {
+  height: 30px;
+  width: 30px;
+}
+
+.search-results h3 {
+  font-size: 10px;
+}
+
+.search-results h4 {
+  font-size: 8px;
+}
+
+.search-results li {
+  z-index: 3;
+}
+
 // -----https://codepen.io/Bluetidepro/pen/GkpEa A PEN BY Zach Reed---
 //Copyright (c) 2017 by Zach Reed (https://codepen.io/Bluetidepro/pen/GkpEa)
 .star-ratings-css {

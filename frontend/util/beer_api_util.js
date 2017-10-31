@@ -13,6 +13,14 @@ export const fetchSidebarBeers = () => {
   });
 };
 
+export const searchBeers = query => {
+  return $.ajax({
+    method: 'get',
+    url: `/api/beers/search`,
+    data: query
+  });
+};
+
 export const fetchBeer = id => {
   return $.ajax({
     method: 'get',
