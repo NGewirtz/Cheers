@@ -1,7 +1,8 @@
 class Api::BeersController < ApplicationController
 
   def index
-    @beers = Beer.all.includes(:brewery).left_outer_joins(:checkins).group('beers.id').order('avg(checkins.rating) desc')
+    @beers = Beer.all.includes(:brewery).left_outer_joins(:checkins).group('beers.id').order('avg(checkins.rating) desc').offset(params[:offset]).limit(10)
+    puts params
     render "api/beers/index"
   end
 

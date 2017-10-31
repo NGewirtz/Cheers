@@ -5,8 +5,31 @@ import SidebarContainer from '../sidebar/sidebar_container';
 
 class BeerIndex extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.onScroll = this.onScroll.bind(this);
+    this.state = {
+      offset: 0
+    };
+  }
+
   componentDidMount() {
-    this.props.fetchBeers();
+    window.scroll(0,0);
+    this.props.fetchBeers({'offset': 0});
+    window.addEventListener('scroll', this.onScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+  }
+
+  onScroll() {
+    //console.log(window.innerHeight, window.scrollY, document.body.offsetHeight, (window.innerHeight + window.scrollY));
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight)) {
+      const newDisplay = this.state.offset + 10;
+      this.props.fetchBeers({'offset': newDisplay});
+      this.setState({'offset': newDisplay});
+    }
   }
 
   render() {

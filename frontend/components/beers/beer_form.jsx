@@ -13,6 +13,7 @@ class BeerForm extends React.Component {
 
   componentDidMount() {
     this.props.clearErrors();
+    window.scroll(0,0);
     if ((this.props.location.pathname !== "/beers/new" )){
       this.props.fetchBeer(this.props.match.params.beerId);
     }else if($.isEmptyObject(this.props.breweries)) {

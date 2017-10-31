@@ -4,7 +4,8 @@ const orderedIdsReducer = (state = [], action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_ALL_BEERS:
-      return action.beers.orderedIds;
+      const ids = state.concat(action.beers.orderedIds);
+      return [...new Set(ids)];
     default:
       return state;
   }

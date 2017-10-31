@@ -8,6 +8,7 @@ import Sidebar from '../sidebar/sidebar';
 class BreweryShow extends React.Component {
 
   componentDidMount() {
+    window.scroll(0,0);
     this.props.fetchBrewery(this.props.match.params.breweryId);
   }
 

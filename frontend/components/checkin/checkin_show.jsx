@@ -36,6 +36,7 @@ class CheckinShow extends React.Component {
   }
 
   componentDidMount() {
+    window.scroll(0,0);
     this.props.fetchCheckin(this.props.match.params.checkinId);
   }
 

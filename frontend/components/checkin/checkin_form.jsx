@@ -11,6 +11,7 @@ class CheckinForm extends React.Component {
   }
 
   componentDidMount() {
+    window.scroll(0,0);
     this.props.clearErrors();
     if (this.props.match.path !== "/checkins/:checkinId/edit") {
       this.props.fetchBeer(this.props.match.params.beerId);

@@ -64,7 +64,7 @@ button {
 
 .wrapper {
   background-color: #f3f2ea;
-  height: 100vh;
+  height: 50%;
   overflow: auto;
 }
 
@@ -298,7 +298,7 @@ li:hover .user-options {
 
 .checkin-index-ul {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
 .beer-index-item {

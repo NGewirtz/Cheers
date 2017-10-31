@@ -1,7 +1,7 @@
 class Api::CheckinsController < ApplicationController
 
   def index
-    @checkins = Checkin.all.includes(:user, :beer, :brewery)
+    @checkins = Checkin.all.includes(:user, :beer, :brewery).order(updated_at: :desc).offset(params[:offset]).limit(10)
   end
 
   def create

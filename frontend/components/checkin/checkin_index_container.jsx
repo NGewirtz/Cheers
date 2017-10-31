@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import CheckinIndex from './checkin_index.jsx';
 import { fetchCheckins } from '../../actions/checkin_actions';
+import { entitiesSelector } from '../../util/selectors';
 
 const mapStateToProps = (state) => {
   return {
-    checkins: Object.values(state.entities.checkins)
+    checkins: entitiesSelector(state.entities.checkins, state.checkinIds),
   };
 };
 

@@ -4,6 +4,7 @@ import Wishlist from './wishlist_container';
 
 class Profile extends React.Component {
   componentDidMount() {
+    window.scroll(0,0);
     this.props.fetchUser(this.props.match.params.userId);
   }
 

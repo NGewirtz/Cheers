@@ -8,7 +8,7 @@ const CheckinReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_ALL_CHECKINS:
-      return Object.assign({}, state, action.checkins );
+      return Object.assign({}, state, action.checkins.checkins );
     case RECEIVE_CHECKIN:
       return Object.assign({}, state, { [action.checkin.id]: action.checkin });
     case RECEIVE_BEER:

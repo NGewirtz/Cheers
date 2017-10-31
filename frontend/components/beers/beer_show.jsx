@@ -6,6 +6,7 @@ import CheckinIndexItem from '../checkin/checkin_index_item';
 class BeerShow extends React.Component {
 
   componentDidMount() {
+    window.scroll(0,0);
     this.props.fetchBeer(this.props.match.params.beerId);
   }
 
@@ -42,7 +43,8 @@ class BeerShow extends React.Component {
             <BeerShowItem beer={this.props.beer}
               action={action}
               className={className}
-              symbol={symbol} />
+              symbol={symbol}
+              title={title} />
             <ul className="beer-show-checkins">
               {checkins}
             </ul>
