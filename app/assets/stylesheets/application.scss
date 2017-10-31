@@ -886,7 +886,9 @@ input[type="range"] {
 .search-results {
   background-color: white;
   z-index: 3;
-  width: 223px;
+  width: 219px;
+  margin-left: 5px;
+  margin-top: -15px;
 }
 
 .search-results img {
@@ -908,8 +910,20 @@ input[type="range"] {
   border-bottom: 1px solid #f3f2ea;
 }
 
+.search-results li:hover {
+  background-color: #f3f2ea;
+  box-sizing: border-box;
+}
+
 .search-div input {
   border-radius: 7px;
+  border: 0;
+  padding-top: 10px;
+}
+
+.search-div input:focus {
+  border-radius: 7px;
+  outline:0;
 }
 
 .header-right {
