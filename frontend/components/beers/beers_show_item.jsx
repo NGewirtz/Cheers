@@ -13,7 +13,9 @@ const BeerShowItem = ({beer, className, action, symbol, title}) => {
           <Link to={`/beers/${beer.id}/edit`} title={`Edit ${beer.name} here`}>
             <h3>{beer.name}</h3>
           </Link>
-          <h4>{beer.breweryName}</h4>
+          <Link to={`/breweries/${beer.brewery_id}`}>
+            <h4>{beer.breweryName}</h4>
+          </Link>
           <h5>{beer.beer_type}</h5>
         </div>
         <BeerInfoList beer={beer} />
