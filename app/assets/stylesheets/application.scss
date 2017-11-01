@@ -732,7 +732,6 @@ input[type="range"] {
 .beer-show-page div:first-child {
   width: 55%;
   display: inline-block;
-  padding-left: 30px;
 }
 
 .beer-show-page aside {
@@ -745,6 +744,10 @@ input[type="range"] {
 .beer-show-page .beer-show-item {
   width: 100%;
   margin-top: 50px;
+}
+
+.beer-show-page .top {
+  padding-left: 30px;
 }
 
 .beer-show-checkins, .brewery-show-checkins {
