@@ -385,6 +385,11 @@ main .beers-index-ul .beer-index-item {
   font-size: 14px;
 }
 
+.beer-index-item-text span {
+  color: #ff0000;
+  font-size: 12px;
+}
+
 .beer-index-item-text h3:hover, .sidebar-item h3:hover, .checkin-link:hover, .checkin-show-body h2:hover, .beer-index-item-text h4:hover {
   color: #ffcc00;
 }

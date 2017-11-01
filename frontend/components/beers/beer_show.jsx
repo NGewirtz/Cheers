@@ -47,6 +47,7 @@ class BeerShow extends React.Component {
               title={title} />
             <ul className="beer-show-checkins">
               {checkins}
+              {this.props.beer.ratings === 0 && <li>Be The First To Checkin This Beer!</li>}
             </ul>
           </div>
           <Sidebar />

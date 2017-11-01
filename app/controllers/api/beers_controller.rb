@@ -1,7 +1,7 @@
 class Api::BeersController < ApplicationController
 
   def index
-    @beers = Beer.all.includes(:brewery).left_outer_joins(:checkins).group('beers.id').order('avg(checkins.rating) desc').offset(params[:offset]).limit(10)
+    @beers = Beer.all.includes(:brewery).order("COALESCE(avg_rating, 0) DESC").order(created_at: :desc).offset(params[:offset]).limit(10)
     puts params
     render "api/beers/index"
   end
@@ -30,10 +30,12 @@ class Api::BeersController < ApplicationController
   end
 
   def sidebar
-    if params[:wishlist].present?
+    if params[:filter] == "wishlist"
       @beers = current_user.wishlist_beers.includes(:brewery)
+    elsif params[:filter] == "bar"
+      @beers = Beer.all.includes(:brewery).order(created_at: :desc).limit(10)
     else
-      @beers = Beer.all.includes(:brewery).joins(:checkins).order('checkins.created_at desc').limit(10).uniq
+      @beers = Beer.all.includes(:brewery).joins(:checkins).order('checkins.created_at desc').uniq[0...10]
     end
     render 'api/beers/sidebar'
   end

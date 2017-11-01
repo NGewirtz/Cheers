@@ -41,7 +41,7 @@ class CheckinIndex extends React.Component {
           <ul className='checkin-index-ul'>
             {checkins}
           </ul>
-          <Sidebar />
+          <Sidebar customHeader="Recently Added Beers" filter="bar"/>
         </main>
       </div>
     );

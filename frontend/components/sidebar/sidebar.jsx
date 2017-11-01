@@ -4,8 +4,8 @@ import SidebarItem from './sidebar_item.jsx';
 class Sidebar extends React.Component {
 
   componentDidMount() {
-    const wishlist = this.props.wishlist;
-    this.props.fetchSidebarBeers({wishlist});
+    const filter = this.props.filter;
+    this.props.fetchSidebarBeers({filter});
   }
   render() {
     const sidebarItems = this.props.beers.map(beer => {
@@ -15,7 +15,7 @@ class Sidebar extends React.Component {
     });
     return (
       <aside>
-        <h2>{this.props.header}</h2>
+        <h2>{this.props.customHeader || this.props.header}</h2>
         <hr />
         <ul>
           {sidebarItems}

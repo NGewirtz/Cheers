@@ -24,6 +24,7 @@ const BeerIndexItem = ({beer, addBeerToWishlist, removeBeerFromWishlist, wishlis
         <Link to={`/breweries/${beer.brewery_id}`}><h4>{beer.breweryName}</h4></Link>
         <h5>{beer.beer_type}</h5>
         <p>{beer.description}</p>
+        {beer.ratings === 0 && <span>* Be The First To Checkin This Beer!</span>}
       </div>
       <button onClick={() => action(beer.id)}
         className={className} title={title}>{symbol}</button>

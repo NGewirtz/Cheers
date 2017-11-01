@@ -42,7 +42,7 @@ class Profile extends React.Component {
               <h2>Recent Activity</h2>
               {checkins}
             </ul>
-            <Wishlist wishlist={true}/>
+            <Wishlist filter={"wishlist"}/>
           </main>
         </div>
       );
