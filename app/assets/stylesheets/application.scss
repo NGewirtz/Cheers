@@ -111,12 +111,13 @@ button {
 
 .splash button {
   font-size: 18px;
-  padding: 10px;
+  padding: 10px 20px;
   margin: 20px;
   background-color: transparent;
   color: white;
   border: solid 3px white;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .splash button:hover {
@@ -134,16 +135,25 @@ button {
 }
 
 .splash header {
-  display: flex;
-  justify-content: space-between;
-  margin: 30px;
-  margin-top: 0;
-  padding-top: 20px;
+  text-align: right;
+  margin-right: 40px;
 }
 
 .splash section {
   display: flex;
   text-align: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.splash form {
+  margin-top: 10%;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.splash div {
+  margin-top: 30px;
 }
 
 .home-logo {
@@ -153,7 +163,7 @@ button {
  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
 }
 
-.home-logo + h2, .header-logo {
+.home-logo + h2, .header-logo, .splash .user-form h1 {
   color: white;
   font-size: 36px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -163,17 +173,44 @@ button {
   font-family: 'Anton', sans-serif;
 }
 
-.splash section {
-  display: flex;
-  flex-direction: column;
-}
-
 form {
   display: flex;
   flex-direction: column;
   width: 33%;
   margin: 0 auto;
   padding: 40px;
+}
+
+.splash .user-form h1 {
+  text-align: center;
+  text-shadow: -2px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 54px;
+  font-family: 'Anton', sans-serif;
+}
+
+.splash .user-form h4, .splash .user-form span {
+  text-align: center;
+  padding: 20px;
+}
+
+.splash .user-form h4 {
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #f3f2ea;
+}
+
+.splash .user-form span {
+  padding-bottom: 0;
+  color: #a9a9a9;
+  font-size: 16px;
+}
+
+.splash .user-form a {
+  color: #c60;
+}
+
+.splash .user-form a:hover {
+  color: #ffcc00;
 }
 
 input, .add-image, textarea, select, .comment-form button {
@@ -886,7 +923,7 @@ input[type="range"] {
 .search-results {
   background-color: white;
   z-index: 3;
-  width: 219px;
+  width: 224px;
   margin-left: 5px;
   margin-top: -15px;
 }
@@ -910,15 +947,12 @@ input[type="range"] {
   border-bottom: 1px solid #f3f2ea;
 }
 
-.search-results li:hover {
-  background-color: #f3f2ea;
-  box-sizing: border-box;
-}
-
 .search-div input {
   border-radius: 7px;
   border: 0;
-  padding-top: 10px;
+  padding-top: 7px;
+  padding-bottom: 8px;
+  padding-left: 10px;
 }
 
 .search-div input:focus {

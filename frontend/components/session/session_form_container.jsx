@@ -4,9 +4,9 @@ import SessionForm from './session_form';
 import { signup, login, clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let formType = "signup";
+  let formType = "Signup";
   if (ownProps.match.path === "/login") {
-    formType = "login";
+    formType = "Login";
   }
   return {
     formType,

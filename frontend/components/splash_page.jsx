@@ -12,16 +12,14 @@ const SplashPage = (props) => {
         <div>
           <button className="guest" onClick={props.guestLogin}>Guest</button>
         </div>
-        <div>
-          <button><Link to='/login'>Login</Link></button>
-          <button><Link to='/signup'>Signup</Link></button>  
-        </div>
       </header>
       <section>
         <h1 className="home-logo">CHEERS!</h1>
         <h2>Join us at the bar</h2>
-        <Route path="/login" component={SessionFormContainer} />
-        <Route path="/signup" component={SessionFormContainer} />
+        <div>
+          <button><Link to='/login'>Login</Link></button>
+          <button><Link to='/signup'>Signup</Link></button>
+        </div>
       </section>
     </div>
   );

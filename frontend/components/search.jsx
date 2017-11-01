@@ -2,11 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { searchBeers } from '../actions/beer_actions';
 import SidebarItem from './sidebar/sidebar_item';
+import { withRouter, Link } from 'react-router-dom';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.location.pathname !== this.props.location.pathname) {
+      const search = document.getElementById('search');
+      search.value = "";
+      this.props.searchBeers({ query: "" });
+    }
   }
 
   handleChange(e) {
@@ -20,7 +29,7 @@ class Search extends React.Component {
     ));
     return (
       <div className="search-div">
-        <input onChange={this.handleChange} type="text" placeholder="Search for a beer"/>
+        <input id="search" onChange={this.handleChange} type="text" placeholder="Find a beer...               &#x1F50D;"/>
         <ul className="search-results">
           {searchResults}
         </ul>
@@ -30,7 +39,7 @@ class Search extends React.Component {
 }
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     search: Object.values(state.search)
   };
@@ -42,4 +51,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));

@@ -29,6 +29,8 @@ const App = ({id}) => (
       <ProtectedRoute path="/checkins/:checkinId" component={CheckinShow} />
       <ProtectedRoute exact path="/beers" component={BeerIndex} />
       <ProtectedRoute exact path="/bar" component={Bar} />
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/" component={SplashPage} />
     </Switch>
   </div>
