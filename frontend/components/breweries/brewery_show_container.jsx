@@ -6,8 +6,8 @@ import { entitiesSelector } from '../../util/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   const brewery = state.entities.breweries[ownProps.match.params.breweryId];
-  let beers = brewery.beerIds ? entitiesSelector(state.entities.beers, brewery.beerIds) : [];
-  let checkins = brewery.checkinIds ? entitiesSelector(state.entities.checkins, brewery.checkinIds) : [];
+  let beers = (brewery && brewery.beerIds) ? entitiesSelector(state.entities.beers, brewery.beerIds) : [];
+  let checkins = (brewery && brewery.checkinIds) ? entitiesSelector(state.entities.checkins, brewery.checkinIds) : [];
   return {
     brewery,
     beers,

@@ -1,6 +1,6 @@
 json.user do
   json.partial! 'api/users/user', user: @user
-  json.checkinIds @user.checkins.ids
+  json.checkinIds @user.checkins.order(updated_at: :desc).ids
 end
 
 json.checkins do

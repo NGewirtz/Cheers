@@ -64,8 +64,9 @@ button {
 
 .wrapper {
   background-color: #f3f2ea;
-  height: 50%;
+  height: 99%;
   overflow: auto;
+  min-height: 99vh;
 }
 
 .add-button, .cheers-button {

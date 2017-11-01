@@ -8,10 +8,23 @@ class Checkin < ApplicationRecord
   has_many :cheers
   after_create :update_beer_avg
 
+  before_update :remove_beer_avg
+  after_update :update_beer_avg
+
   has_one :brewery,
     through: :beer,
     source: :brewery
 
+
+  def remove_beer_avg
+    beer = Beer.find(self.beer_id)
+    if beer.ratings == 1
+      avg = nil
+    else
+      avg = (((beer.avg_rating.to_f * (beer.ratings.to_f))) - user.checkins.find(self.id).rating.to_f ) / (beer.ratings.to_f - 1)
+    end
+    beer.update!(avg_rating: avg)
+  end
 
   def update_beer_avg
     beer = Beer.find(self.beer_id)

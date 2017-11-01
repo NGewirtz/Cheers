@@ -6,4 +6,4 @@ json.image user.image.url
 json.commentCount user.comments.count
 json.cheers cheers
 json.wishlistBeers wishlist_beers
-json.checkinIds user.checkins.ids
+json.checkinIds user.checkins.order(updated_at: :desc).ids
