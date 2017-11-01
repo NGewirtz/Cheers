@@ -16,7 +16,7 @@ class BeerForm extends React.Component {
     window.scroll(0,0);
     if ((this.props.location.pathname !== "/beers/new" )){
       this.props.fetchBeer(this.props.match.params.beerId);
-    }else if($.isEmptyObject(this.props.breweries)) {
+    }else {
       this.props.fetchBreweries();
     }
   }
@@ -24,10 +24,11 @@ class BeerForm extends React.Component {
   componentWillReceiveProps(newProps) {
     if ((newProps.location.pathname !== "/beers/new") && (this.props.location !== newProps.location)) {
       this.props.fetchBeer(newProps.match.params.beerId);
-    }else if($.isEmptyObject(this.props.breweries)){
-      this.props.fetchBreweries();
     }else if(newProps.beer !== this.state) {
       this.setState(newProps.beer);
+    }
+    if (newProps.location === "/beers/new") {
+      this.props.fetchBreweries();
     }
   }
 
@@ -57,7 +58,7 @@ class BeerForm extends React.Component {
     let x = Object.keys(this.state).map(key => {
       formData.append(`beer[${key}]`, this.state[key]);
     });
-    this.props.action(formData).then(() => this.props.history.push(`/beers/${this.props.beer.id}`));
+    this.props.action(formData).then((beer) => this.props.history.push(`/beers/${beer.beer.id}`));
   }
 
   render() {

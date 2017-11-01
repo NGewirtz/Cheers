@@ -13,7 +13,7 @@ class BreweryShow extends React.Component {
   }
 
   render() {
-    if(!this.props.brewery) {
+    if(!this.props.brewery || !this.props.brewery.checkinIds) {
       return <div></div>;
     }else {
       const checkins = this.props.checkins.map(checkin => {
