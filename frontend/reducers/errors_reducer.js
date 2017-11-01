@@ -1,5 +1,6 @@
 import { RECEIVE_SESSION_ERRORS, RECEIVE_CURRENT_USER, CLEAR_ERRORS } from '../actions/session_actions';
-import { RECEIVE_BEER } from '../actions/beer_actions'
+import { RECEIVE_BEER } from '../actions/beer_actions';
+import { RECEIVE_UPDATED_USER } from '../actions/beer_actions';
 
 const ErrorsReducer = (state = [], action) => {
   Object.freeze(state);
@@ -8,6 +9,8 @@ const ErrorsReducer = (state = [], action) => {
       console.log(action.errors);
       return action.errors.responseJSON || [];
     case RECEIVE_CURRENT_USER:
+      return [];
+    case RECEIVE_UPDATED_USER:
       return [];
     case RECEIVE_BEER:
       return [];

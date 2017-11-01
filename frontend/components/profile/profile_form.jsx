@@ -1,12 +1,17 @@
 import React from 'react';
 
 class ProfileForm extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = this.props.user;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleImageUpload = this.handleImageUpload.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
   }
 
   handleImageUpload(e) {
@@ -44,6 +49,15 @@ class ProfileForm extends React.Component {
   }
 
   render() {
+    let errors;
+    if (Array.isArray(this.props.errors)) {
+      errors = this.props.errors.map((error, idx) => (
+        <li key={idx}>{error}</li>
+      ));
+    }else {
+      console.log(errors);
+      errors = [];
+    }
     return (
       <form onSubmit={this.handleSubmit} className="user-edit-form">
         <img src={this.state.imageUrl || this.props.user.userImg}/>
@@ -51,7 +65,10 @@ class ProfileForm extends React.Component {
           <input id="file" type="file" onChange={this.handleImageUpload} className="add-image"></input>
         </label>
         <input onChange={this.handleChange} type="text" value={this.state.currentUser} placeholder="Username"/>
-      <input type="submit" value="Update Profile" />
+        <input type="submit" value="Update Profile" />
+        <ul className='beer-form-errors'>
+          {errors}
+        </ul>
       </form>
     );
   }
