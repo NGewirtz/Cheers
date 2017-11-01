@@ -13,8 +13,10 @@ import Bar from './checkin/checkin_index_container.jsx';
 import CheckinForm from './checkin/checkin_form_container.jsx';
 import CheckinShow from './checkin/checkin_show_container.jsx';
 import Header from './header';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
-const App = ({id}) => (
+const App = ({ id }, props) => (
   <div className="wrapper">
     <ProtectedRoute path="/" component={Header} />
     <Switch>
@@ -36,4 +38,16 @@ const App = ({id}) => (
   </div>
 );
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    id: state.session.id
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+
+  };
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
