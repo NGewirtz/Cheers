@@ -27,6 +27,12 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.location !== newProps.location) {
+      this.props.clearErrors();
+    }
+  }
+
   render() {
     let errors = this.props.errors.map(error => (
       <li className='errors'>{error}</li>
