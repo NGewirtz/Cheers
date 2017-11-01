@@ -1,6 +1,7 @@
 import React from 'react';
 import CheckinIndexItem from '../checkin/checkin_index_item';
 import Wishlist from './wishlist_container';
+import { _dynamicTitle } from '../../util/format_util';
 
 class Profile extends React.Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class Profile extends React.Component {
         }
       });
       const user = this.props.user;
+      _dynamicTitle(user.username || " ");
       return (
         <div>
           <header className="profile-header">

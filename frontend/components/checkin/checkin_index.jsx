@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from '../sidebar/sidebar_container';
 import CheckinIndexItem from './checkin_index_item';
+import { _dynamicTitle } from '../../util/format_util';
 
 class CheckinIndex extends React.Component {
 
@@ -34,6 +35,7 @@ class CheckinIndex extends React.Component {
     const checkins = this.props.checkins.map(checkin => (
       <CheckinIndexItem checkin={checkin} key={checkin.id}/>
     ));
+    _dynamicTitle("The Bar")
     return (
       <div className="top">
         <h1 className="bar-header">Bar Talk</h1>

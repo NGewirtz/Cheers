@@ -4,6 +4,7 @@ import Rating from '../rating';
 import CheckinComments from './checkin_comments';
 import CheckinShowHeader from './checkin_show_header';
 import CheckinCheers from './checkin_cheers';
+import { _dynamicTitle } from '../../util/format_util';
 
 class CheckinShow extends React.Component {
 
@@ -52,6 +53,7 @@ class CheckinShow extends React.Component {
     }else {
       const checkin = this.props.checkin;
       const beer = { id: checkin.beerId, name: checkin.beer, breweryName: checkin.brewery, image: checkin.beerImage, brewery_id: checkin.breweryId };
+      _dynamicTitle(checkin.beer + " Checkin")
       return (
         <article className="checkin-show-body">
           <CheckinShowHeader checkin={checkin} />

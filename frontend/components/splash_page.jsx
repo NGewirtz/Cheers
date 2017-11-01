@@ -6,6 +6,7 @@ import { guestLogin } from '../actions/session_actions';
 import { connect } from 'react-redux';
 
 const SplashPage = (props) => {
+  document.title = "CHEERS!"
   return (
     <div className="splash">
       <header>

@@ -2,6 +2,7 @@ import React from 'react';
 import BeerIndexItem from './beers_index_item';
 import { Link } from 'react-router-dom';
 import SidebarContainer from '../sidebar/sidebar_container';
+import { _dynamicTitle } from '../../util/format_util';
 
 class BeerIndex extends React.Component {
 
@@ -24,7 +25,6 @@ class BeerIndex extends React.Component {
   }
 
   onScroll() {
-    //console.log(window.innerHeight, window.scrollY, document.body.offsetHeight, (window.innerHeight + window.scrollY));
     if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight)) {
       const newDisplay = this.state.offset + 10;
       this.props.fetchBeers({'offset': newDisplay});
@@ -43,6 +43,7 @@ class BeerIndex extends React.Component {
           key={beer.id}
           wishlistBeers={this.props.wishlistBeers} />
       ));
+      _dynamicTitle("Top Beers")
       return (
         <div>
           <section className="beers-top">

@@ -4,6 +4,7 @@ import CheckinIndexItem from '../checkin/checkin_index_item';
 import Rating from '../rating';
 import { _date, _decimalNum } from '../../util/format_util';
 import Sidebar from '../sidebar/sidebar';
+import { _dynamicTitle } from '../../util/format_util';
 
 class BreweryShow extends React.Component {
 
@@ -22,6 +23,7 @@ class BreweryShow extends React.Component {
         }
       });
       const brewery = this.props.brewery;
+      _dynamicTitle(brewery.name);
       return (
         <div className="show-wrapper">
           <div className="brewery-show-div">

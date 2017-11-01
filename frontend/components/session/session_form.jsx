@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { _dynamicTitle } from '../../util/format_util';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class SessionForm extends React.Component {
     let errors = this.props.errors.map(error => (
       <li className='errors'>{error}</li>
     ));
+    _dynamicTitle(this.props.formType);
     return (
       <div className="splash">
         <form onSubmit={this.handleSubmit} className="user-form">

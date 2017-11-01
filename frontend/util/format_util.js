@@ -17,3 +17,7 @@ export const _decimalNum = string => {
 export const _aOrAn = beerName => {
   return /[aeiouAEIOU]/.test(beerName[0]) ? "an" : "a";
 };
+
+export const _dynamicTitle = name => {
+  return document.title = `CHEERS! | ${name}`;
+};

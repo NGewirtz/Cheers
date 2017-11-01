@@ -1,5 +1,6 @@
 import React from 'react';
 import SidebarItem from '../sidebar/sidebar_item';
+import { _dynamicTitle } from '../../util/format_util';
 
 class CheckinForm extends React.Component {
 
@@ -54,6 +55,7 @@ class CheckinForm extends React.Component {
       const errors = this.props.errors.map((error, idx) => (
         <li key={idx}>{error}</li>
       ));
+      _dynamicTitle(this.props.formType)
       return (
         <form onSubmit={this.handleSubmit} className='checkin-form'>
           <SidebarItem beer={this.props.beer} />

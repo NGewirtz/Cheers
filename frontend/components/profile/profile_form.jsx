@@ -1,4 +1,5 @@
 import React from 'react';
+import { _dynamicTitle } from '../../util/format_util';
 
 class ProfileForm extends React.Component {
 
@@ -58,6 +59,7 @@ class ProfileForm extends React.Component {
       console.log(errors);
       errors = [];
     }
+    _dynamicTitle("Edit Profile");
     return (
       <form onSubmit={this.handleSubmit} className="user-edit-form">
         <img src={this.state.imageUrl || this.props.user.userImg}/>

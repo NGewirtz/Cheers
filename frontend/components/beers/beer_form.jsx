@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBeer } from '../../util/beer_api_util';
+import { _dynamicTitle } from '../../util/format_util';
 
 class BeerForm extends React.Component {
 
@@ -77,6 +78,9 @@ class BeerForm extends React.Component {
         console.log(errors);
         errors = [];
       }
+      let pageTitle = this.props.beer.name ?
+        `Edit ${this.props.beer.name}` : "Add Beer";
+      _dynamicTitle(pageTitle);
       return (
         <form className="beer-form" onSubmit={this.handleSubmit}>
           <div>

@@ -2,6 +2,7 @@ import React from 'react';
 import BeerShowItem from './beers_show_item';
 import Sidebar from '../sidebar/sidebar_container';
 import CheckinIndexItem from '../checkin/checkin_index_item';
+import { _dynamicTitle } from '../../util/format_util';
 
 class BeerShow extends React.Component {
 
@@ -25,6 +26,7 @@ class BeerShow extends React.Component {
           return <CheckinIndexItem checkin={checkin} key={checkin.id}/>;
         }
       });
+      _dynamicTitle(this.props.beer.name);
       let className, action, title, symbol;
       if(this.props.wishlistBeers.includes(this.props.beer.id)){
         className = "add-button red";
