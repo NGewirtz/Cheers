@@ -4,7 +4,8 @@ import SidebarItem from './sidebar_item.jsx';
 class Sidebar extends React.Component {
 
   componentDidMount() {
-    this.props.fetchSidebarBeers({"sidebar": true});
+    const wishlist = this.props.wishlist;
+    this.props.fetchSidebarBeers({wishlist});
   }
   render() {
     const sidebarItems = this.props.beers.map(beer => {

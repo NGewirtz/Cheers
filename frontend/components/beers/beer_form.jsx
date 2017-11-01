@@ -57,7 +57,7 @@ class BeerForm extends React.Component {
     let x = Object.keys(this.state).map(key => {
       formData.append(`beer[${key}]`, this.state[key]);
     });
-    this.props.action(formData).then(() => this.props.history.push('/beers'));
+    this.props.action(formData).then(() => this.props.history.push(`/beers/${this.props.beer.id}`));
   }
 
   render() {

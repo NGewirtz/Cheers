@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchBeers } from '../../actions/beer_actions';
+import { fetchSidebarBeers } from '../../actions/beer_actions';
 import Sidebar from '../sidebar/sidebar.jsx';
 import { entitiesSelector } from '../../util/selectors';
 
@@ -7,14 +7,14 @@ const mapStateToProps = (state) => {
   const wishlistBeers = state.entities.users[state.session.id] ?
     state.entities.users[state.session.id].wishlistBeers : [];
   return {
-    beers: entitiesSelector(state.entities.beers, wishlistBeers),
+    beers: entitiesSelector(state.sidebarItems.beers, wishlistBeers),
     header: 'Wish List'
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchSidebarBeers: (filter) => dispatch(fetchBeers(filter))
+    fetchSidebarBeers: (filter) => dispatch(fetchSidebarBeers(filter))
   };
 };
 

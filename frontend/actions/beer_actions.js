@@ -50,8 +50,8 @@ export const fetchBeers = (filter) => dispatch => (
   APIUtil.fetchBeers(filter).then(beers => dispatch(receiveBeers(beers)))
 );
 
-export const fetchSidebarBeers = () => dispatch => (
-  APIUtil.fetchSidebarBeers().then(beers => dispatch(receiveSidebarBeers(beers)))
+export const fetchSidebarBeers = filter => dispatch => (
+  APIUtil.fetchSidebarBeers(filter).then(beers => dispatch(receiveSidebarBeers(beers)))
 );
 
 export const fetchBeer = id => dispatch => (

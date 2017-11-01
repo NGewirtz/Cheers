@@ -6,6 +6,9 @@ class User < ApplicationRecord
   has_many :comments
   has_many :wishlist_items
   has_many :cheers
+  has_many :wishlist_beers,
+    through: :wishlist_items,
+    source: :beer
 
   attr_reader :password
 

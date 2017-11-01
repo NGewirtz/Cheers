@@ -6,10 +6,11 @@ export const fetchBeers = (filter) => {
   });
 };
 
-export const fetchSidebarBeers = () => {
+export const fetchSidebarBeers = (filter) => {
   return $.ajax({
     method: 'get',
     url: `/api/beers/sidebar`,
+    data: filter
   });
 };
 

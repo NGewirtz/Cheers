@@ -30,7 +30,11 @@ class Api::BeersController < ApplicationController
   end
 
   def sidebar
-    @beers = Beer.all.includes(:brewery).joins(:checkins).order('checkins.created_at desc').limit(10).uniq
+    if params[:wishlist].present?
+      @beers = current_user.wishlist_beers.includes(:brewery)
+    else
+      @beers = Beer.all.includes(:brewery).joins(:checkins).order('checkins.created_at desc').limit(10).uniq
+    end
     render 'api/beers/sidebar'
   end
 
