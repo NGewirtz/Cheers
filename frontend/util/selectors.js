@@ -8,5 +8,5 @@ export const uniqueEntitiesSelector = (entity, ids) => {
 };
 
 export const cheersSelector = cheers => (
-  cheers.reverse().slice(0,6)
+  cheers.reverse().slice(0,5)
 );
