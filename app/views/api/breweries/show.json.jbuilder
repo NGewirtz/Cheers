@@ -1,5 +1,6 @@
 json.brewery do
-  json.extract! @brewery, :id, :name, :description, :location, :created_at, :rating, :ratings, :beer_count
+  json.extract! @brewery, :id, :name, :description, :location, :created_at, :ratings, :beer_count
+  json.rating @brewery.avg_rating
   json.image @brewery.image.url
   json.beerIds @brewery.beers.ids
   json.checkinIds @brewery.checkins.ids
