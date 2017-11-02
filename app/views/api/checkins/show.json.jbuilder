@@ -3,7 +3,7 @@ cheer_user_ids = @checkin.cheers.map { |cheer| cheer.user.id }
 json.checkin do
   json.partial! 'api/checkins/checkin', checkin: @checkin
   json.cheerUserIds cheer_user_ids
-  json.commentIds checkin.comments.ids
+  json.commentIds @checkin.comments.ids
 end
 
 json.comments do
