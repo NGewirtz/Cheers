@@ -756,8 +756,9 @@ input[type="range"] {
   margin-top: 50px;
 }
 
-.beer-show-page .top {
+.beer-show-page.top {
   padding-left: 30px;
+  width: 100%;
 }
 
 .beer-show-checkins, .brewery-show-checkins {
@@ -877,7 +878,7 @@ input[type="range"] {
   padding-left: 5%;
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 58%;
   height: fit-content;
 }
 
@@ -918,7 +919,7 @@ input[type="range"] {
 }
 
 .brewery-show-checkins {
-  width: 60%;
+  width: 58%;
   margin-left: 5%;
   margin-top: 20px;
   box-sizing: border-box;

@@ -53,7 +53,7 @@ class CheckinShow extends React.Component {
     }else {
       const checkin = this.props.checkin;
       const beer = { id: checkin.beerId, name: checkin.beer, breweryName: checkin.brewery, image: checkin.beerImage, brewery_id: checkin.breweryId };
-      _dynamicTitle(checkin.beer + " Checkin")
+      _dynamicTitle(checkin.beer + " Checkin");
       return (
         <article className="checkin-show-body">
           <CheckinShowHeader checkin={checkin} />
