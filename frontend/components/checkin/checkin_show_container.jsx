@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
   const checkin = state.entities.checkins[ownProps.match.params.checkinId];
   const comments = checkin ?
     entitiesSelector(state.entities.comments, checkin.commentIds) : [];
-  if (checkin) {
+  if (checkin && checkin.cheerUserIds) {
     cheered = checkin.cheerUserIds.includes(state.session.id) ? true : false;
     users = state.entities.users;
   }
