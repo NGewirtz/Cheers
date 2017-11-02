@@ -55,8 +55,8 @@ render() {
 
 Wishlist - Again taking advantage of the modularity of React components, I was able to transform the main sidebar into a custom wishlist for each individual user. By using RoR to model the association of each wish list beer ID to the user, I as able to render appropriate buttons to add and remove beers from the wishlist throughout the app. I then presented the entire wish list by reassigning the already built main sidebar to a new container, allowing the entire wishlist to be displayed, already styled, in each user's profile.
 
-
+##### Sample Profile
 ![profile](http://s3-us-east-2.amazonaws.com/cheers-the-app/users/images/000/000/092/original/profile.png?1509639194)
 
-
+##### Sample Detailed Checkin
 ![checkin](http://s3-us-east-2.amazonaws.com/cheers-the-app/users/images/000/000/092/original/checkinshow.png?1509639415)
