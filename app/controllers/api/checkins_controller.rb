@@ -20,7 +20,7 @@ class Api::CheckinsController < ApplicationController
   end
 
   def show
-    @checkin = Checkin.includes(:cheers).find(params[:id])
+    @checkin = Checkin.includes(:cheers, :user, :brewery).find(params[:id])
     render 'api/checkins/show'
   end
 

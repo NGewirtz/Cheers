@@ -13,6 +13,7 @@ class BeerShow extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if(this.props.location !== newProps.location) {
+      window.scroll(0,0);
       this.props.fetchBeer(newProps.match.params.beerId);
     }
   }
