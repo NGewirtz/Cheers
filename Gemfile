@@ -35,8 +35,6 @@ gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 gem "paperclip", '~> 5.0.0'
 gem 'aws-sdk', '< 3.0'
 gem 'figaro'
-gem 'pry-rails'
-gem 'pry'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -59,6 +57,8 @@ group :development do
   gem 'spring', '2.0.2'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
+  gem 'pry-rails'
+  gem 'pry'
 
 end
 
