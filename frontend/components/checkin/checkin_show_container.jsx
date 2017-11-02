@@ -9,9 +9,9 @@ import { entitiesSelector } from '../../util/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   let cheered, users;
-  const userId = state.session.id
+  const userId = state.session.id;
   const checkin = state.entities.checkins[ownProps.match.params.checkinId];
-  const comments = checkin ?
+  const comments = (checkin && checkin.cheerUserIds) ?
     entitiesSelector(state.entities.comments, checkin.commentIds) : [];
   if (checkin && checkin.cheerUserIds) {
     cheered = checkin.cheerUserIds.includes(state.session.id) ? true : false;

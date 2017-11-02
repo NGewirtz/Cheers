@@ -7,4 +7,3 @@ json.usernameId checkin.user.id
 json.userImage checkin.user.image.url
 json.beerId checkin.beer.id
 json.breweryId checkin.brewery.id
-json.commentIds checkin.comments.ids
