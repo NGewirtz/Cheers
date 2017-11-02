@@ -13,6 +13,12 @@ class BreweryShow extends React.Component {
     this.props.fetchBrewery(this.props.match.params.breweryId);
   }
 
+  componentWillReceiveProps(newProps) {
+    if(this.props.location !== newProps.location) {
+      this.props.fetchBrewery(newProps.match.params.breweryId);
+    }
+  }
+
   render() {
     if(!this.props.brewery || !this.props.brewery.checkinIds) {
       return <div></div>;
