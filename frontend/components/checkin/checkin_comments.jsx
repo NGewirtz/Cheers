@@ -9,8 +9,8 @@ const CheckinComments = ({comments, userId, deleteComment}) => {
           <img className="user-header-img" src={comment.image}/>
           <span>
             <Link to={`/users/${comment.userId}`}>
-              {comment.username}
-            </Link> said {comment.body}
+              {comment.username}: 
+            </Link> {comment.body}
           </span>
           {(userId === comment.userId) && <p className="comment-delete" onClick={() => deleteComment(comment.id)}>Delete</p>}
         </li>
