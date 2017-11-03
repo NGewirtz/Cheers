@@ -14,7 +14,7 @@ Ruby on Rails - Used primarily to build a backend api, RoR is responsible for mo
 
 React - All front end views are rendered with React. React is also responsible for managing and interpreting user input, and efficiently loading data.
 
-Redux - Working with React, Redux was used to manage the data, or state of the entire app. Redux ensures data speed and reliability by ensuring that a singe source of truth is maintained throughout the app.
+Redux - By working hand in hand with React, Redux is used to manage the data, or state of the entire app. Redux helps maintain data speed and reliability by ensuring that a singe source of truth is accessible throughout the app.
 
 ## Features
 
@@ -53,7 +53,7 @@ render() {
 }
 ```
 
-Wishlist - Again taking advantage of the modularity of React components, I was able to transform the main sidebar into a custom wish list for each individual user. By using RoR to model the association of each wish list beer ID to the user, I as able to render appropriate buttons to add and remove beers from the wishlist throughout the app. I then presented the entire wish list by reassigning the already built main sidebar to a new container, allowing the entire wish list to be displayed, already styled, in each user's profile.
+Wishlist - Again taking advantage of the modularity of React components, I was able to transform the main sidebar into a custom wish list for each individual user. By using RoR to model the association of each wish list beer ID to the user, I as able to render appropriate buttons to add and remove beers from the wish list throughout the app. I then presented the entire wish list by reassigning the already built main sidebar to a new container, allowing the entire wish list to be displayed, already styled, in each user's profile.
 
 ##### Sample Profile
 ![profile](http://s3-us-east-2.amazonaws.com/cheers-the-app/users/images/000/000/092/original/profile.png?1509639194)
