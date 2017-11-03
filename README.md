@@ -20,6 +20,8 @@ Redux - While working hand in hand with React, Redux is used to manage the data,
 
 Autocomplete Search - On the header of every page you can find a search bar which allows users to quickly find the beer of their choice. I was able to take full advantage of React's reusable components for easy styling, RoR's active record to handle querying, and Redux to store my query in its own slice of state. The result is a fast, lightweight, easy to use search feature.
 
+![search](https://media.giphy.com/media/xT0CyETpgzOy8GtESk/giphy.gif)
+
 ##### Entire Controller Method
 ```
 def search
@@ -54,6 +56,9 @@ render() {
 ```
 
 Wishlist - Again taking advantage of the modularity of React components, I was able to transform the main sidebar into a custom wish list for each individual user. By using RoR to model the association of each wish list beer ID to the user, I as able to render appropriate buttons to add and remove beers from the wish list throughout the app. I then presented the entire wish list by reassigning the already built main sidebar to a new container, allowing the entire wish list to be displayed, already styled, in each user's profile.
+
+
+![wishlist](https://media.giphy.com/media/3ohjUR9glmQosNITgk/giphy.gif)
 
 ##### Sample Profile
 ![profile](http://s3-us-east-2.amazonaws.com/cheers-the-app/users/images/000/000/092/original/profile.png?1509639194)
