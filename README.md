@@ -2,7 +2,7 @@
 
 ![CHEERS!](http://s3-us-east-2.amazonaws.com/cheers-the-app/beers/images/000/000/809/original/Screen_Shot_2017-10-28_at_4.20.51_PM.png?1509635721)
 
-Cheers is a full stack web application built using Ruby on Rails and React with Redux technology. At its core Cheers is a website that allows you to checkin a rating for your all of favorite beers. You can comment on your fiends checkins, check out the top ranked beers throughout the entire site, search for a particular beers, and add new beers to your own personal wish list. Inspired by untapped, cheers brings beer drinkers together from all over the world.
+Cheers is a full stack web application built using Ruby on Rails and React with Redux technology. At its core Cheers is a website that allows you to checkin a rating for your all of favorite beers. You can comment on your fiends checkins, check out the top ranked beers throughout the entire site, search for a particular beer, and add new beers to your own personal wish list. Inspired by untapped, cheers brings beer drinkers together from all over the world.
 
 ## Live site
 
@@ -12,7 +12,7 @@ Cheers is a full stack web application built using Ruby on Rails and React with 
 
 Ruby on Rails - Used primarily to build a backend api, RoR is responsible for modeling and delivering data to the user, querying the database with active record, and providing secure user specific content.
 
-React - All front end views are rendered with React. React is also responsible for managing and interpreting user input, and efficiently loading data.
+React - All front end views are rendered with React. React is also responsible for managing and interpreting user input, and efficiently presenting data.
 
 Redux - While working hand in hand with React, Redux is used to manage the data, or state of the entire app. Redux helps maintain data speed and reliability by ensuring that a singe source of truth is accessible throughout the app.
 
