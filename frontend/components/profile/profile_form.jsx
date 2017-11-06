@@ -56,7 +56,6 @@ class ProfileForm extends React.Component {
         <li key={idx}>{error}</li>
       ));
     }else {
-      console.log(errors);
       errors = [];
     }
     _dynamicTitle("Edit Profile");

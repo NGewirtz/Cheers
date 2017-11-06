@@ -5,9 +5,6 @@ import Root from './components/root';
 import { logout } from './actions/session_actions';
 import { fetchBeer } from './actions/beer_actions';
 
-
-const Test = () => <h1>TEST</h1>;
-
 document.addEventListener("DOMContentLoaded", () => {
   let store, id;
   if (window.currentUser) {

@@ -75,7 +75,6 @@ class BeerForm extends React.Component {
           <li key={idx}>{error}</li>
         ));
       }else {
-        console.log(errors);
         errors = [];
       }
       let pageTitle = this.props.beer.name ?
