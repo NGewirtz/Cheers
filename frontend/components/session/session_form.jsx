@@ -48,7 +48,6 @@ class SessionForm extends React.Component {
           <input type='password' value={this.state.password}
             onChange={this.handleChange('password')} placeholder="Password"/>
           <input type="submit" value={this.props.formType}/>
-          {this.props.formType === "Login" && <h4>Forgot your password?</h4>}
           {this.props.formType === "Login" &&
             <span>New around here? <Link to="/signup">Signup!</Link></span>}
           {this.props.formType === "Signup" &&
