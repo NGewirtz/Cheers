@@ -5,7 +5,7 @@ class Brewery < ApplicationRecord
     through: :beers,
     source: :checkins
 
-  has_attached_file :image, default_url: "https://s3.us-east-2.amazonaws.com/cheers-the-app/defaultBrewery1.jpg"
+  has_attached_file :image, default_url: "http://s3.us-east-2.amazonaws.com/cheers-the-app/defaultBrewery1.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   def rating
