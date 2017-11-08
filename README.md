@@ -6,7 +6,7 @@ Cheers is a full stack web application built using Ruby on Rails and React with 
 
 ## Live site
 
-[CHEERS!](https://cheers-the-app.herokuapp.com/#/)
+[CHEERS!](http://cheers-the-app.herokuapp.com/#/)
 
 ## Technology
 
