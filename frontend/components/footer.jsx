@@ -9,6 +9,7 @@ const Footer = () => {
       <a href="https://www.linkedin.com/in/neilgewirtz/">
         <i class="fa fa-linkedin-square fa-fw fa-3x"></i>
       </a>
+      <a href="http://www.neilgewirtz.com">By: Neil Gewirtz</a>
     </footer>
   );
 };
