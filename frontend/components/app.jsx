@@ -13,6 +13,7 @@ import Bar from './checkin/checkin_index_container.jsx';
 import CheckinForm from './checkin/checkin_form_container.jsx';
 import CheckinShow from './checkin/checkin_show_container.jsx';
 import Header from './header';
+import Footer from './footer';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
@@ -35,6 +36,7 @@ const App = ({ id }, props) => (
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/" component={SplashPage} />
     </Switch>
+    <ProtectedRoute path="/" component={Footer} />
   </div>
 );
 
