@@ -43,7 +43,7 @@ class BeerIndex extends React.Component {
           key={beer.id}
           wishlistBeers={this.props.wishlistBeers} />
       ));
-      _dynamicTitle("Top Beers")
+      _dynamicTitle("Top Beers");
       return (
         <div>
           <section className="beers-top">
