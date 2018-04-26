@@ -61,4 +61,4 @@ Wishlist - Again taking advantage of the modularity of React components, I was a
 ![wishlist](https://media.giphy.com/media/3ohjUR9glmQosNITgk/giphy.gif)
 
 ##### Sample Detailed Checkin
-![checkin](http://s3-us-east-2.amazonaws.com/cheers-the-app/users/images/000/000/092/original/checkinshow.png?1509639415)
+![checkin](https://s3.us-east-2.amazonaws.com/cheers-the-app/checkinshow.png)
