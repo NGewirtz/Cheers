@@ -8,15 +8,16 @@ import { fetchBeer } from './actions/beer_actions';
 document.addEventListener("DOMContentLoaded", () => {
   let store, id;
   if (window.currentUser) {
-    const preloadedState = { session: {
-      currentUser: window.currentUser.username,
-      userImg: window.currentUser.image,
-      id: window.currentUser.id
-    }
-  };
-  store = configureStore(preloadedState);
-  id = window.currentUser.id;
-  delete window.currentUser;
+    const preloadedState = {
+      session: {
+        currentUser: window.currentUser.username,
+        userImg: window.currentUser.image,
+        id: window.currentUser.id
+      }
+    };
+    store = configureStore(preloadedState);
+    id = window.currentUser.id;
+    delete window.currentUser;
   }else {
     store = configureStore();
   }
