@@ -65,7 +65,11 @@ class ProfileForm extends React.Component {
         <label htmlFor="file" className="add-image">Add An Image
           <input id="file" type="file" onChange={this.handleImageUpload} className="add-image"></input>
         </label>
-        <input onChange={this.handleChange} type="text" value={this.state.currentUser} placeholder="Username"/>
+        <input onChange={this.handleChange}
+          type="text" value={this.state.currentUser}
+          placeholder="Username"
+          disabled={this.state.currentUser === "Guest" ? "disabled" : ""}
+        />
         <input type="submit" value="Update Profile" />
         <ul className='beer-form-errors'>
           {errors}
