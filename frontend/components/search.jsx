@@ -29,7 +29,7 @@ class Search extends React.Component {
     ));
     return (
       <div className="search-div">
-        <input id="search" onChange={this.handleChange} type="text" placeholder="Find a beer...               &#x1F50D;"/>
+        <input id="search" onChange={this.handleChange} type="text" placeholder="Find a beer by name...      &#x1F50D;"/>
         <ul className="search-results">
           {searchResults}
         </ul>
