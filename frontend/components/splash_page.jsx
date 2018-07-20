@@ -12,6 +12,10 @@ const SplashPage = (props) => {
       <header>
         <div>
           <button className="guest" onClick={props.guestLogin}>Guest</button>
+          <a href="https://www.youtube.com/watch?v=CvCPK7ie3wA&feature=youtu.be"
+            target="_blank">
+            DEMO
+          </a>
         </div>
       </header>
       <section>
